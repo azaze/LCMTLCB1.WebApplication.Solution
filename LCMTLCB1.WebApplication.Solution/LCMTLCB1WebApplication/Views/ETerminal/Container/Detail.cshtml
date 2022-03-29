@@ -1,0 +1,141 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = Resource.Container;
+}
+@using LCMTLCB1WebApplication.Resources
+@model ContainerViewModel
+
+
+
+<div class="container">
+
+    @*-------------------------------------------------------*@
+    @*-------------------------------------------------------*@
+    @*--------------------Start Here-------------------------*@
+    @*-------------------------------------------------------*@
+    @*-------------------------------------------------------*@
+
+
+    <br />  <br />   
+
+
+    @if (Model.status != "OK")
+    {
+        <br />  <br />  <br />  <br />
+        <div class="row eterminalBody">
+            <div class="col-md-2 col-lg-2">
+            </div>
+            <div class="col-md-8 col-lg-8">
+                <div class="row" style="background-color:#F9F9F9">
+                    <div class="col-md-2 col-lg-2">
+                    </div>
+
+
+                    <div class="col-md-8 col-lg-8 txtCenter">
+                        <br />  <br />  <br />
+                        @(Model.msg)
+                        <br />  <br />  <br />
+                    </div>
+
+
+                    <div class="col-md-2 col-lg-2">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-lg-2">
+            </div>
+
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <div class="form-group row">
+                    <label class="txtCenter">
+                        Container Number : 
+                        @ViewBag.ContainerNumber
+                    </label>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row eterminalBody">
+
+            
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-12 txtRight">
+                        As of @DateTime.Now.ToString("dd/MM/yyyy HH:mm")
+                    </div>
+                </div> <div class="row">
+                <table id="grid" name="grid" class="table table-striped table-bordered" style="background-color:#fff;">
+                    <thead>
+                        <tr>
+                            <th class="col-lg-no">No.</th>
+                            <th>Handling</th>
+                            <th>Sub H.</th>
+                            <th>F/E</th>
+                            <th>Line</th>
+                            <th>Type</th>
+                            <th> Order</th>
+                            <th>Carrier</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Terminal</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    @if (Model.unitlist.Count > 0)
+                    {
+                        int i = 1;
+                        <tbody>
+                            @foreach (var a in Model.unitlist)
+                            {
+                               
+
+                                <tr>
+                                    <td>@i</td>
+
+                                    <td><a href="ContainerDetailData?containerNumber=@a.handlingid&handlingidOut=0&bookingNumber=@ViewBag.bookingNumber&p=@ViewBag.p" > <i class="fa fa-search">  </i>  @a.handlingtype</a> </td>
+                                    <td>@a.handlingsubtype</td>
+                                    <td>@a.loadingstatus</td>
+                                    <td>@a.booking.linecode </td>
+                                    <td>@a.booking.type </td>
+                                    <td>@a.booking.ordernumber</td>
+                                    <td>@a.carriertype </td>
+                                    <td>@string.Format("{0:dd/MM/yyyy}", a.movetime)</td>
+                                    <td>@string.Format("{0:HH:mm}",a.movetime)</td>
+                                    <td>@a.terminal</td>
+                                    <td>@a.phase</td>
+                                </tr>
+                                i++;
+                            }
+                        </tbody>
+                    }
+                    else
+                    {
+                        <tbody>
+                            <tr>
+                                <td colspan="8"> No data found. </td>
+                            </tr>
+                        </tbody>
+
+                    }
+                </table>
+            </div></div>
+        </div>
+
+
+    }
+
+</div>
+
+<script type="text/javascript">
+
+
+
+
+</script>

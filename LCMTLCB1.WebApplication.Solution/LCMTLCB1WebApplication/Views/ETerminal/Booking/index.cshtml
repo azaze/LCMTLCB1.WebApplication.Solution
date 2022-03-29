@@ -1,0 +1,203 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = Resource.e_Terminal + " - " + Resource.Booking;
+}
+@using LCMTLCB1WebApplication.Resources
+
+<style>
+    table#titlebar {
+        width: 100%;
+    }
+
+        table#titlebar tr {
+            height: 40px;
+        }
+
+        table#titlebar td#title1 {
+            width: 25px;
+            background-image: url(../images/TitleBG1.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        table#titlebar td#title2 {
+            background-image: url(../images/TitleBG2.png);
+            background-repeat: repeat-x;
+        }
+
+        table#titlebar td#title3 {
+            width: 117px;
+            background-image: url(../images/TitleBG3.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+    /*-------------------------------------------------------*/
+    /*-------------------------------------------------------*/
+    /*--------------------Start Here-------------------------*/
+    /*-------------------------------------------------------*/
+    /*-------------------------------------------------------*/
+
+    .rowMain {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+        .rowMain img {
+            width: 100%
+        }
+
+        .rowMain .detail div {
+            display: table;
+            height: 100%;
+        }
+
+            .rowMain .detail div p {
+                vertical-align: middle;
+                display: table-cell;
+            }
+
+    @@media (min-width: 992px) {
+        .divL {
+            padding-right: 0;
+        }
+
+        .divR {
+            padding-left: 0;
+        }
+    }
+</style>
+
+<div class="container backgroundVision">
+    <table id="titlebar">
+        <tr>
+            <td id="title1"></td>
+            <td id="title2" class="h2"><strong style="color:#FFFFFF">@Resource.Booking</strong></td>
+            <td id="title3"></td>
+        </tr>
+    </table>
+    <div class="col-sm-12 col-md-12"><center><hr style="width:100%;margin:5px 0 0 0;border: 3px solid #0950A0;opacity:1"></center></div>
+    @*-------------------------------------------------------*@
+    @*-------------------------------------------------------*@
+    @*--------------------Start Here-------------------------*@
+    @*-------------------------------------------------------*@
+    @*-------------------------------------------------------*@
+    <div class="row rowMain ">
+        <div class="row">
+            <div class="col-md-12 col-lg-12  ">
+                <br />
+                <div class="topicHead-Center"> <strong>@Resource.Booking </strong></div>
+            </div>
+
+
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <div class="row">
+
+            <div class="col-md-3 col-lg-3">
+            </div>
+            <div class="col-md-3 col-lg-3">
+            </div>
+            <div class="col-md-6 col-lg-6">
+
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label txtRight"> Booking Number : </label>
+                    <div class="col-sm-8">
+                        <div class="input-group">
+                            <input type="text" id="txtBookingNumber" class="form-control" value="@ViewBag.bookingNumber" placeholder="" />
+                            <div class="input-group-append">
+                                <button id="btnSearch" class="btn btn-primary" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <br />
+        <br />
+        <div id="detailContent">
+        </div>
+        <button id="btnBack" class="btn btn-primary " style="width:90px;margin-left:10px;">
+            <i class="fa fa-backward"></i> Back
+        </button>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+       $(document).ready(function(){
+                $("#txtBookingNumber").val($("#txtBookingNumber").val().toUpperCase());
+                localStorage.setItem("PageSize", @ViewBag.InitPageSize);
+
+                loadList($("#txtBookingNumber").val(),@ViewBag.InitPageSize,1);
+                $("#btnSearch").click(function(){
+                    if($("#txtBookingNumber").val()==''){
+                        $("#txtBookingNumber").focus();
+                        return;
+                    }
+                 $("#txtBookingNumber").val($("#txtBookingNumber").val().toUpperCase());
+                  loadList($("#txtBookingNumber").val(),typeof($("#ddlPageSize").val())==="undefined"?@ViewBag.InitPageSize:$("#ddlPageSize").val(),1);
+
+                });
+                 $('#btnBack').click(function () {
+                redirect("/Eterminal");
+            })
+                var input = document.getElementById("txtBookingNumber");
+                input.addEventListener("keyup", function(event) {
+                  if (event.keyCode === 13) {
+                   event.preventDefault();
+                   document.getElementById("btnSearch").click();
+                  }
+                });
+            });
+
+            function loadList(bookingNumber,pageSize,pageNumber){
+
+               $.post('@Url.Action("BookingDetail","Eterminal")',"bookingNumber="+bookingNumber+"&pageSize="+pageSize+"&page="+pageNumber, function(result){
+                    //alert(result);
+                    var select = "#detailContent";
+                    $(select).html(result);
+                    makePaginator(bookingNumber,select,pageSize,pageNumber);
+
+                })
+            }
+            function enableTable(select) {// select = div ของ table
+                $(select).find(".newsSubject").click(function () {
+                    var id = $(this).attr("newsid");
+                    var url = '@Url.Action("Detail","News")?newsid=' + id;
+                    window.open(url,"_blank");
+                    //alert(url);
+                });
+            }
+
+
+            function makePaginator(bookingNumber,select,pageSize,pageNumber) {
+                var sPageSize = localStorage.getItem("PageSize");
+
+                $("#ddlPageSize").val(sPageSize);
+                $("div.paginator", select).pagination({
+                    items: $("div.paginator", select).attr("items"),
+                    itemsOnPage: $("div.paginator", select).attr("itemsOnPage"),
+                    currentPage: $("div.paginator", select).attr("pageNumber"),
+                    cssStyle: 'light-theme',
+                    onPageClick: function (pageNumber) {
+                        loadList(bookingNumber,pageSize,pageNumber);
+                    }
+                });
+                $("#ddlPageSize").change(function() {
+                    localStorage.setItem("PageSize", $(this).val());
+                   loadList($("#txtBookingNumber").val() ,$("#ddlPageSize").val(),1);
+                });
+                }
+</script>
+

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <History>True|2022-03-29T04:11:26.6526499Z;True|2022-03-29T11:09:31.9917854+07:00;False|2022-03-29T11:09:07.5677273+07:00;True|2022-03-29T09:32:10.6688103+07:00;True|2022-03-29T09:31:47.3916814+07:00;True|2022-03-29T07:32:19.5018455+07:00;False|2022-03-29T07:27:10.2332006+07:00;</History>
+    <_PublishTargetUrl>\\192.168.10.119\SharedFile\LCB1Web</_PublishTargetUrl>
+  </PropertyGroup>
+</Project>

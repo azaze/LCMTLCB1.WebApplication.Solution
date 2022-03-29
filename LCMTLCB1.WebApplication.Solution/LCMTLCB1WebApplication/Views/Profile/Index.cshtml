@@ -1,0 +1,118 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = Resource.Profile;
+}
+@using LCMTLCB1WebApplication.Resources
+
+<style>
+    table#titlebar{
+        width: 100%;
+    }
+    table#titlebar tr{
+        height:40px;
+    }
+    table#titlebar td#title1{
+        width:25px;
+        background-image: url(../images/TitleBG1.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+    table#titlebar td#title2{
+        background-image: url(../images/TitleBG2.png);
+        background-repeat: repeat-x;
+    }
+    table#titlebar td#title3{
+        width:117px;
+        background-image: url(../images/TitleBG3.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    background-position: center center;
+    }
+
+    /*-------------------------------------------------------*/
+    /*-------------------------------------------------------*/
+    /*--------------------Start Here-------------------------*/
+    /*-------------------------------------------------------*/
+    /*-------------------------------------------------------*/
+
+    .rowMain{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .rowMain img{
+        width: 100%
+    }
+    .rowMain .detail div{
+        display:table;
+        height : 100%;
+    }
+    .rowMain .detail div p{
+        vertical-align: middle;
+        display:table-cell;
+    }
+
+    @@media (min-width: 992px) {
+        .divL
+        {
+            padding-right: 0;
+        }
+        .divR
+        {
+            padding-left: 0;
+        }
+    }
+</style>
+
+<div>
+    <table id="titlebar">
+        <tr>
+            <td id="title1"></td>
+            <td id="title2" class="h2"><strong style="color:#FFFFFF">@Resource.Profile</strong></td>
+            <td id="title3"></td>
+        </tr>
+    </table>
+    <div class="col-sm-12 col-md-12"><center><hr style="width:100%;margin:5px 0 0 0;border: 3px solid #0950A0;opacity:1"></center></div>
+    @*-------------------------------------------------------*@
+    @*-------------------------------------------------------*@
+    @*--------------------Start Here-------------------------*@
+    @*-------------------------------------------------------*@
+    @*-------------------------------------------------------*@
+
+    <div class="row rowMain">
+        <div class="col-md-12 col-lg-6 detail divL">
+            <div style="padding:0 20px 0 20px;">
+                <p>
+                LCB1 Group consists of LCB Container Terminal 1 Ltd. and LCMT Company Ltd. We operate a total of 3 berths (A0, B0 and B1) in Laem Chabang Port.<br /><br />
+                In 2019, a container throughput of over one million and seven hundred fifty-one thousand TEUs was achieved with 1,063 vessel calls. Vessel operations, yard operations, gate transaction, documentation and all other container handling services are offered 24 hours a day, 365 days a year by our highly motivated and trained staff.<br /><br />
+                At LCB1, we believe in driving our performance to provide world class service to win and sustain customers. We place strong emphasis on operational excellence and we are committed to constant improvements.Through this philosophy,we are confident in our ability to meet the growing and evolving needs of our customers.
+                </p>
+            </div>
+        </div>
+        <div class="col-6 col-sm-6 divR">
+            <img src="~/images/LCMT.jpg"/>
+        </div>
+        <div class="col-6 col-sm-6 divL">
+            <img src="~/images/LCB1.jpg"/>
+        </div>
+        <div class="col-md-12 col-lg-6 detail divR">
+            <div style="padding:0 20px 0 20px;">
+                <p>LCB1 Group consists of LCB Container Terminal 1 Ltd. and LCMT Company Ltd. We operate a total of 3 berths (A0, B0 and B1) in Laem Chabang Port.<br /><br />
+                In 2019, a container throughput of over one million and seven hundred fifty-one thousand TEUs was achieved with 1,063 vessel calls. Vessel operations, yard operations, gate transaction, documentation and all other container handling services are offered 24 hours a day, 365 days a year by our highly motivated and trained staff.<br /><br />
+                At LCB1, we believe in driving our performance to provide world class service to win and sustain customers. We place strong emphasis on operational excellence and we are committed to constant improvements.Through this philosophy,we are confident in our ability to meet the growing and evolving needs of our customers.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+    })
+</script>

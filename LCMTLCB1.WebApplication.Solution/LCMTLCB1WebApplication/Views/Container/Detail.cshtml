@@ -1,0 +1,332 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = Resource.Container;
+}
+@using LCMTLCB1WebApplication.Resources
+@model ContainerViewModel
+
+
+
+<div class="container">
+
+    @*-------------------------------------------------------*@
+    @*-------------------------------------------------------*@
+    @*--------------------Start Here-------------------------*@
+    @*-------------------------------------------------------*@
+    @*-------------------------------------------------------*@
+
+
+    <br />  <br /> 
+    @if (Model.status != "OK")
+    {
+        <div class="row eterminalBody">
+            <div class="col-md-2 col-lg-2">
+            </div>
+            <div class="col-md-8 col-lg-8">
+                <div class="row" style="background-color:#F9F9F9">
+                    <div class="col-md-2 col-lg-2">
+                    </div>
+
+
+                    <div class="col-md-8 col-lg-8 txtCenter">
+                        <br />  <br />  <br />
+                        @(Model.msg)
+                        <br />  <br />  <br />
+                    </div>
+
+
+                    <div class="col-md-2 col-lg-2">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-lg-2">
+            </div>
+
+        </div>
+    }
+    else
+    {
+
+        <div class="row ">
+            <div class="col-md-2 col-lg-2">
+            </div>
+            <div class="col-md-8 col-lg-8">
+                 
+                <div class="row" style="background-color:#F9F9F9">
+                    <div class="col-md-8 col-lg-8 dv-Head-bar">
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-form-label txtLeft "> Container Number: @Model.unit.containerid</label>
+                             
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 dv-Head-bar">
+                        <div class="form-group row">
+                            <label class="col-sm-12 col-form-label txtRight"> As of @DateTime.Now.ToString("dd/MM/yyyy HH:mm") </label>
+
+                        </div>
+
+
+                    </div>
+                    
+
+
+                </div>
+            </div>
+            <div class="col-md-2 col-lg-2">
+            </div>
+
+        </div>
+        <div class="row ">
+            <div class="col-md-2 col-lg-2">
+            </div>
+            <div class="col-md-8 col-lg-8">
+                <div class="row" style="background-color:#F9F9F9">
+                    <div class="col-md-8 col-lg-8">
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label txtRight ">@(Model.unit.handlingtype.ToUpper().Trim()=="OUT"?"Departed from":"Arrived to")   LCB1:</label>
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <label class="col-form-label">@(string.Format("{0:dd/MM/yyyy - HH:mm}", Model.unit.movetime))</label>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-lg-2">
+                    </div>
+                    <div class="col-md-2 col-lg-2">
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-md-2 col-lg-2">
+            </div>
+
+        </div>
+        @if (Model.unit.carriertype == "Truck" || Model.unit.carriertype == "TR")
+        {
+            <div class="row  ">
+                <div class="col-md-2 col-lg-2">
+                </div>
+                <div class="col-md-8 col-lg-8">
+                    <div class="row" style="background-color:#F9F9F9">
+                        <div class="col-md-8 col-lg-8">
+                            <div class="form-group row">
+                                <label class="col-sm-6 col-form-label txtRight"> 	By Truck:</label>
+                                <div class="col-sm-6">
+                                    <div class="input-group">
+                                        <label class="col-form-label">@(  Model.unit.carrier  )</label>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 col-lg-2">
+                        </div>
+                        <div class="col-md-2 col-lg-2">
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                </div>
+
+            </div>
+            <div class="row  ">
+                <div class="col-md-2 col-lg-2">
+                </div>
+                <div class="col-md-8 col-lg-8">
+                    <div class="row" style="background-color:#F9F9F9">
+                        <div class="col-md-8 col-lg-8">
+                            <div class="form-group row">
+                                <label class="col-sm-6 col-form-label txtRight"> 		License Number:</label>
+                                <div class="col-sm-6">
+                                    <div class="input-group">
+                                        <label class="col-form-label">@(  Model.unit.idnumber  )</label>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 col-lg-2">
+                        </div>
+                        <div class="col-md-2 col-lg-2">
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                </div>
+
+            </div>
+             
+        }
+        else
+        {
+            <div class="row  ">
+                <div class="col-md-2 col-lg-2">
+                </div>
+                <div class="col-md-8 col-lg-8">
+                    <div class="row" style="background-color:#F9F9F9">
+                        <div class="col-md-8 col-lg-8">
+                            <div class="form-group row">
+                                <label class="col-sm-6 col-form-label txtRight"> 	By Vessel:</label>
+                                <div class="col-sm-6">
+                                    <div class="input-group">
+                                        <label class="col-form-label">@(  Model.unit.carrier+" "+Model.unit.vesselname )</label>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 col-lg-2">
+                        </div>
+                        <div class="col-md-2 col-lg-2">
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                </div>
+
+            </div>
+
+            <div class="row  ">
+                <div class="col-md-2 col-lg-2">
+                </div>
+                <div class="col-md-8 col-lg-8">
+                    <div class="row" style="background-color:#F9F9F9">
+                        <div class="col-md-8 col-lg-8">
+                            <div class="form-group row">
+                                <label class="col-sm-6 col-form-label txtRight">Voyage Out:</label>
+                                <div class="col-sm-6">
+                                    <div class="input-group">
+                                        <label class="col-form-label">@(  Model.unit.idnumber )</label>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 col-lg-2">
+                        </div>
+                        <div class="col-md-2 col-lg-2">
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                </div>
+            </div>
+        }
+
+        <div class="row  ">
+            <div class="col-md-2 col-lg-2">
+            </div>
+            <div class="col-md-8 col-lg-8">
+                <div class="row" style="background-color:#F9F9F9">
+                    <div class="col-md-8 col-lg-8">
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label txtRight"> 	Seal No.:</label>
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <label class="col-form-label">@(  Model.unit.seal1 )</label>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-lg-2">
+                    </div>
+                    <div class="col-md-2 col-lg-2">
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-md-2 col-lg-2">
+            </div>
+        </div>
+        <div class="row  ">
+            <div class="col-md-2 col-lg-2">
+            </div>
+            <div class="col-md-8 col-lg-8">
+                <div class="row" style="background-color:#F9F9F9">
+                    <div class="col-md-8 col-lg-8">
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label txtRight">  	Gross weight:</label>
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <label class="col-form-label">@(  string.Format("{0:#,##0.0}", Model.unit.grossweight )+" Kgs.")</label>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-lg-2">
+                    </div>
+                    <div class="col-md-2 col-lg-2">
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-md-2 col-lg-2">
+            </div>
+        </div>
+        <div class="row  ">
+            <div class="col-md-2 col-lg-2">
+            </div>
+            <div class="col-md-8 col-lg-8">
+                <div class="row" style="background-color:#F9F9F9">
+                    <div class="col-md-8 col-lg-8">
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label txtRight">  	 	Booking Number:</label>
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <label class="col-form-label">@(  Model.unit.booking.ordernumber.Trim()==""?"No booking for delivery":Model.unit.booking.ordernumber)</label>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-lg-2">
+                    </div>
+                    <div class="col-md-2 col-lg-2">
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-md-2 col-lg-2">
+            </div>
+        </div>
+        <br />
+
+        <br />
+
+    }
+    <br />
+
+</div>
+
+<script type="text/javascript">
+
+
+
+
+</script>

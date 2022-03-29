@@ -1,0 +1,121 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = Resource.News;
+}
+@using LCMTLCB1WebApplication.Resources
+<style>
+    table#titlebar{
+        width: 100%;
+    }
+    table#titlebar tr{
+        height:40px;
+    }
+    table#titlebar td#title1{
+        width:25px;
+        background-image: url(../images/TitleBG1.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+    table#titlebar td#title2{
+        background-image: url(../images/TitleBG2.png);
+        background-repeat: repeat-x;
+    }
+    table#titlebar td#title3{
+        width:117px;
+        background-image: url(../images/TitleBG3.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    /*-------------------------------------------------------*/
+    /*-------------------------------------------------------*/
+    /*--------------------Start Here-------------------------*/
+    /*-------------------------------------------------------*/
+    /*-------------------------------------------------------*/
+    .rowMain{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .rowMain div.titlename{
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .rowMain>span{
+        border-bottom: 3px solid #0950A0
+    }
+    
+    .rowMain div.subjet{
+        color: #0000FF;
+    }
+    .rowMain div.detail{
+        margin-bottom: 10px;
+    }
+</style>
+
+<div>
+    <table id="titlebar">
+        <tr>
+            <td id="title1"></td>
+            <td id="title2" class="h2"><strong style="color:#FFFFFF">@Resource.News</strong></td>
+            <td id="title3"></td>
+        </tr>
+    </table>
+    <div class="col-sm-12 col-md-12"><center><hr style="width:100%;margin:5px 0 0 0;border: 3px solid #0950A0;opacity:1"></center></div>
+    @*-------------------------------------------------------*@
+    @*-------------------------------------------------------*@
+    @*--------------------Start Here-------------------------*@
+    @*-------------------------------------------------------*@
+    @*-------------------------------------------------------*@
+
+    <div class="row rowMain">
+        
+        <div id="ListContent">
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        loadList();
+    });
+
+    function loadList(pageNumber){
+        $.post('@Url.Action("List","News")',"page="+pageNumber, function(result){
+           
+            var select = "#ListContent";
+            $(select).html(result);
+            makePaginator(select);
+            enableTable(select);
+        })
+    }
+
+    function enableTable(select) {// select = div ของ table
+        $(select).find(".newsSubject").click(function () {
+            var id = $(this).attr("newsid");
+            var url = '@Url.Action("Detail","News")?newsid=' + id;
+            window.open(url,"_blank");
+            //alert(url);
+        });
+    }
+
+    function makePaginator(select) {
+        $("div.paginator", select).pagination({
+            items: $("div.paginator", select).attr("items"),
+            itemsOnPage: $("div.paginator", select).attr("itemsOnPage"),
+            currentPage: $("div.paginator", select).attr("pageNumber"),
+            cssStyle: 'light-theme',
+            onPageClick: function (pageNumber) {
+                loadList(pageNumber);
+            }
+        });
+    }
+        
+</script>

@@ -1,0 +1,290 @@
+﻿<!DOCTYPE html>
+@using LCMTLCB1WebApplication.Resources
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LCMT_LCB1 @ViewData["Title"] </title>
+    <link rel="icon" href="~/images/lcb1logowhite.gif" type="image/x-icon" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/all.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/LCMTLCB1WebApplication.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/NavBar.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/simplePagination.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/select2.min.css" />
+</head>
+<body>
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/select2.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery.simplePagination.js" asp-append-version="true"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js" data-cfasync="false"></script>
+@*    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">LCMTLCB1WebApplication</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>*@
+@*    <div class="container headercontent">
+        <img src="~/images/lcb1lcmtlogo.jpg" style="width:480px"/>
+        <hr style="margin:0px">
+
+        <nav class="navbar navbar-expand-sm navbar-light">
+            <div class="container-fluid ">
+                <a class="navbar-brand"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav navbar-right">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Course</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </div>
+    <div class="container bodycontent">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>*@
+    <div class="container maincontent">
+        <div class="headercontent">
+            <div class="row">
+                <div class="col-md-8 col-sm-12">
+                    <img src="~/images/lcb1lcmtlogo.png" class="logo"/>
+                </div>
+                @*<div class="col-md-4 col-sm-12 position-relative ">
+                    <div class="position-absolute bottom-0 end-0" style="padding-right:20px">
+                        <a style="font-size:24px; vertical-align:bottom; margin-right:5px" target="_blank" href="https://www.facebook.com/LCB1LCMT/"><i class="fab fa-facebook"></i></a>
+                        <div class="btn-group btnlanggroup" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="btnradiolang" id="btnradio1" value="EN" autocomplete="off" @(ViewData["Lang"].ToString().Equals("en-US")?"checked":"")>
+                            <label class="btn btn-outline-primary lbLang" for="btnradio1">EN</label>
+
+                            <input type="radio" class="btn-check" name="btnradiolang" id="btnradio2" value="TH" autocomplete="off" @(ViewData["Lang"].ToString().Equals("th-TH")?"checked":"")>
+                            <label class="btn btn-outline-primary lbLang" for="btnradio2">TH</label>
+                        </div>
+                    </div>
+                </div>*@
+            </div>
+
+            <hr style="margin:0px">
+            
+            @*<nav class="navbar navbar-expand-sm navbar-light">
+                <div class="container-fluid ">
+                    <a class="navbar-brand"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                        <ul class="navbar-nav navbar-right">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">@Resource.Home</a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Dropdown
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+
+
+
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Course</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>*@
+
+            <nav class="customsnavbar navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"></a>
+                    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content">
+                        <div class="hamburger-toggle">
+                            <div class="hamburger">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbar-content">
+                        <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link @(ViewData["Menu"].ToString().Equals("Home")?"active":"")" aria-current="page" href="@Url.Action("Index", "Home")" >@Resource.Home</a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle @(ViewData["Menu"].ToString().Equals("About")?"active":"")" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">@Resource.About_Us</a>
+                                <ul class="dropdown-menu shadow">
+                                    <li><a class="dropdown-item"  asp-controller="Profile" asp-action="Index">@Resource.Profile</a></li>
+                                    <li><a class="dropdown-item" asp-controller="ManagementTeam" asp-action="Index">@Resource.Management_Team</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Award" asp-action="Index">@Resource.Award</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Statistics" asp-action="Index">@Resource.Statistics</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Facility" asp-action="Index">@Resource.Facility</a></li>
+                                    @*<li><a class="dropdown-item" href="#">@Resource.Gallerry</a></li>*@
+                                </ul>
+                            </li>
+
+                            @*<li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle @(ViewData["Menu"].ToString().Equals("Service")?"active":"")" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">@Resource.Service</a>
+                                <ul class="dropdown-menu shadow">
+                                    <li><a class="dropdown-item" asp-controller="Technology" asp-action="Index">@Resource.Technology</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Operation" asp-action="Index" style="color:red">@Resource.Operation</a></li>
+                                </ul>
+                            </li>*@
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle @(ViewData["Menu"].ToString().Equals("OnlineService")?"active":"")" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">@Resource.Online_Service</a>
+                                <ul class="dropdown-menu shadow">
+                                    <li><a class="dropdown-item" href="https://e-payment.lcb1.com/auth/login/?next=/order/" target="_blank">@Resource.e_Payment</a></li>
+                                    <li><a class="dropdown-item" id="liEterminal" href="#">@Resource.e_Terminal</a></li>
+                                    <li class="dropend">
+                                        <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">@Resource.e_Quick_Search</a>
+                                        <ul class="dropdown-menu shadow">
+                                            @*<li><a class="dropdown-item" href="">@Resource.e_Quick_Search</a></li>*@
+                                            <li><a class="dropdown-item" asp-controller="Container" asp-action="Index">@Resource.Container_Search</a></li>
+                                            <li><a class="dropdown-item" asp-controller="Booking" asp-action="Index">@Resource.Booking_Search</a></li>
+                                            <li><a class="dropdown-item" asp-controller="BerthSchedule" asp-action="Index">@Resource.Berth_Schedule</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropend">
+                                        <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">@Resource.Export</a>
+                                        <ul class="dropdown-menu shadow">
+                                            <li><a class="dropdown-item" href="https://e-payment.lcb1.com/auth/login/?next=/shorepass/" target="_blank">@Resource.Create_Shore_Online</a></li>
+                                            <li><a class="dropdown-item" href="https://e-payment.lcb1.com/booking/report" target="_blank">@Resource.Check_Shore_Online</a></li>
+                                             
+                                        </ul>
+                                    </li>
+                                    <li class="dropend">
+                                        <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">@Resource.Import</a>
+                                        <ul class="dropdown-menu shadow">
+                                            <li><a class="dropdown-item" href="https://e-payment.lcb1.com/bl/report" target="_blank">@Resource.Import_Charge</a></li>
+                                            <li><a class="dropdown-item" href="https://e-payment.lcb1.com/bl/container" target="_blank">@Resource.Container_Status</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="dropdown-item" href="https://e-payment.lcb1.com/cargo/schedule" target="_blank">@Resource.CFS_Online_LCL</a></li>
+                                    @*<li><a class="dropdown-item" href="#" style="color:red">@Resource.TTT_Dashboard</a></li>*@
+                                    @*<li><a class="dropdown-item" href="https://osticket.lcb1.com/" target="_blank">@Resource.IT_Support_Center</a></li>*@
+                                    @*<li><a class="dropdown-item" href="https://safety.lcb1.com/" target="_blank">@Resource.Safety_Induction_for_External_Trucker</a></li>*@
+                                </ul>
+                            </li>
+                           @* <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle @(ViewData["Menu"].ToString().Equals("Service")?"active":"")" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">@Resource.Service</a>
+                                <ul class="dropdown-menu shadow">
+                                    <li><a class="dropdown-item" asp-controller="Technology" asp-action="Index">@Resource.Technology</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Operation" asp-action="Index" style="color:red">@Resource.Operation</a></li>
+                                </ul>
+                            </li>*@
+                           @* <li class="nav-item">
+                                <a class="nav-link @(ViewData["Menu"].ToString().Equals("News")?"active":"")" aria-current="page" asp-controller="News" asp-action="Index">@Resource.News</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link @(ViewData["Menu"].ToString().Equals("Carrer")?"active":"")" aria-current="page" href="#">@Resource.Career</a>
+                            </li>*@
+                            <li class="nav-item">
+                                <a class="nav-link @(ViewData["Menu"].ToString().Equals("Contact")?"active":"")" aria-current="page" asp-controller="Contact" asp-action="Index">@Resource.Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+
+        </div>
+
+        <div class="bodycontent">
+            <main role="main" style="padding-bottom:0px">
+                @RenderBody()
+            </main>
+        </div>
+
+        <div class="footercontent">
+            <div><center><hr style="width:100%;margin:0 0 10px 0;"></center></div>
+            <div>
+                <center>Disclaimer | <a href="#" data-bs-toggle="modal" data-bs-target="#legelModal">Legal</a> |<a href="#"   >Privacy Notice</a>  |<a href="#"  >Terms and Conditions</a>  | <a target="_blank" href="/files/IMSPolicy.pdf">QSHEE Policy</a></center>
+                <center>Copyright © 2022. All rights reserved by LCB Container Terminal 1 Ltd.</center>
+            </div>
+        </div>
+    </div>
+    <script>
+     $(document).ready(function(){
+         $("#liEterminal").click(function(){
+               $.post('@Url.Action("GetUserlogin","ETerminal")', function(result){
+           
+                    var username = result.username;
+
+                    if(username == ""){
+                        alert('Please Login to e-Terminal!');
+                    }else{
+                        redirect("/eTerminal");
+                    }
+                })
+
+            // if($("#hdnUser").val()==""){
+            //    alert('Please Login!');
+            //     //  $('html, body').animate({
+            //     //    scrollTop: $(document).height('0')
+            //     //},
+            //     //1500);
+                 
+            //    $("#txtUser").focus();
+            //    return false;
+            //}else{
+            //    alert(565);
+            //    redirect("/eTerminal");
+            //}
+         });
+    });
+        
+    </script>
+
+@*    <footer class="footer text-muted">
+        <div class="container footercontent">
+            <div>
+                <center>Disclaimer | Legal | Privacy Notice | Terms and Conditions | QSHEE Policy</center>
+                <center>Copyright © 2021. All rights reserved by LCB Container Terminal 1 Ltd.</center>
+            </div>
+        </div>
+    </footer>*@
+    
+    <partial name="~/Views/Home/_TermsAndConditions.cshtml" />
+    <partial name="~/Views/Home/_LegelModal.cshtml" />
+    <partial name="~/Views/Home/_LegelModal.cshtml" />
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

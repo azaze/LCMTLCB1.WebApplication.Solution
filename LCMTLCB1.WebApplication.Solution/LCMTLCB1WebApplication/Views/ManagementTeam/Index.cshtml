@@ -1,0 +1,216 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = Resource.Management_Team;
+}
+@using LCMTLCB1WebApplication.Resources
+
+
+<style>
+    table#titlebar{
+        width: 100%;
+    }
+    table#titlebar tr{
+        height:40px;
+    }
+    table#titlebar td#title1{
+        width:25px;
+        background-image: url(../images/TitleBG1.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+    table#titlebar td#title2{
+        background-image: url(../images/TitleBG2.png);
+        background-repeat: repeat-x;
+    }
+    table#titlebar td#title3{
+        width:117px;
+        background-image: url(../images/TitleBG3.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    /*-------------------------------------------------------*/
+    /*-------------------------------------------------------*/
+    /*--------------------Start Here-------------------------*/
+    /*-------------------------------------------------------*/
+    /*-------------------------------------------------------*/
+    .rowMain{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .rowMain div.groupname{
+        text-align:center;
+        margin-bottom: 10px;
+    }
+
+    .groupname>span{
+        border-bottom: 3px solid #0950A0
+    }
+    .imgprofile{
+        width:170px;
+        height:200px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+    }
+    .imgprofile.ceo{
+        background-image: url(../images/ManagementTeam/CEO.jpg);
+    }
+    .imgprofile.deputy{
+        background-image: url(../images/ManagementTeam/DEPUTY.jpg);
+    }
+    
+    .imgprofile.cfo{
+        background-image: url(../images/ManagementTeam/CFO.jpg);
+    }
+    .imgprofile.eng{
+        background-image: url(../images/ManagementTeam/ENG.jpg);
+    }
+    .imgprofile.ops{
+        background-image: url(../images/ManagementTeam/OPS.jpg);
+    }
+    
+    .imgprofile.cap{
+        background-image: url(../images/ManagementTeam/cap.jpg);
+    }
+    .imgprofile.cs{
+        background-image: url(../images/ManagementTeam/cs.jpg);
+    }
+    .imgprofile.qsshe{
+        background-image: url(../images/ManagementTeam/qsshe.jpg);
+    }
+    
+    .imgprofile.hr{
+        background-image: url(../images/ManagementTeam/hr.jpg);
+    }
+    .imgprofile.it{
+        background-image: url(../images/ManagementTeam/it.jpg);
+    }
+
+    .profile{
+        margin-bottom: 20px;
+    }
+
+
+</style>
+
+<div>
+    <table id="titlebar">
+        <tr>
+            <td id="title1"></td>
+            <td id="title2" class="h2"><strong style="color:#FFFFFF">@Resource.Management_Team</strong></td>
+            <td id="title3"></td>
+        </tr>
+    </table>
+    <div class="col-sm-12 col-md-12"><center><hr style="width:100%;margin:5px 0 0 0;border: 3px solid #0950A0;opacity:1"></center></div>
+    @*-------------------------------------------------------*@
+    @*-------------------------------------------------------*@
+    @*--------------------Start Here-------------------------*@
+    @*-------------------------------------------------------*@
+    @*-------------------------------------------------------*@
+
+    <div class="row rowMain">
+        <div class="col-12"><div class="h2 groupname"><span>Executive</span></div></div>
+        <div class="col-12 profile">
+            <center>
+                <div class="imgprofile ceo"></div>
+                <span>
+                    <strong>Mr. Kaare Spange</strong><br />
+                    Chief Executive Officer
+                </span>
+            </center>
+
+        </div>
+
+        <div class="col-12"><div class="h2 groupname"><span>Deputy</span></div></div>
+        <div class="col-12 profile">
+            <center>
+                <div class="imgprofile deputy"></div><span>
+                    <strong>Mr. Jung Kil Kim</strong><br />
+                    Chief Commercial Officer & Deputy CEO
+                </span>
+            </center>
+        </div>
+
+        <div class="col-12"><div class="h2 groupname"><span>Management Team</span></div></div>
+        <div class="col-md-4 profile">
+            <center>
+                <div class="imgprofile cfo"></div><span>
+                    <strong>Ms. Patimaporn Kingkaew</strong><br />
+                    Chief Financial Officer
+                </span>
+            </center>
+        </div>
+        <div class="col-md-4 profile">
+            <center>
+                <div class="imgprofile eng"></div><span>
+                    <strong>Mr. Apiwat Chutipattana</strong><br />
+                    Engineering Manager
+                </span>
+            </center>
+        </div>
+        <div class="col-md-4 profile">
+            <center>
+                <div class="imgprofile ops"></div><span>
+                    <strong>Ms. Pantila Dangmani</strong><br />
+                    Operations Manager
+                </span>
+            </center>
+        </div>
+
+        <div class="col-md-4 profile">
+            <center>
+                <div class="imgprofile cap"></div><span>
+                    <strong>Ms. Pakcharin Yodmalai</strong><br />
+                    Corporate Affairs and Administration Manager
+                </span>
+            </center>
+        </div>
+        <div class="col-md-4 profile">
+            <center>
+                <div class="imgprofile cs"></div><span>
+                    <strong>Ms. Pennapa Leerahasakulchai</strong><br />
+                    Customer Service Manager
+                </span>
+            </center>
+        </div>
+        <div class="col-md-4 profile">
+            <center>
+                <div class="imgprofile qsshe"></div><span>
+                    <strong>Mr.Boonsong Wongwai</strong><br />
+                    QSSHE Manager
+                </span>
+            </center>
+        </div>
+
+        <div class="col-md-4 profile">
+            <center>
+                <div class="imgprofile hr"></div><span>
+                    <strong>Ms.Phromphan Yoopumepruek</strong><br />
+                    HR Manager
+                </span>
+            </center>
+        </div>
+        <div class="col-md-4 profile">
+            <center>
+                <div class="imgprofile it"></div><span>
+                    <strong>Mr. Sakon Hongsuwan</strong><br />
+                    IT Manager
+                </span>
+            </center>
+        </div>
+    </div>
+
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+    })
+</script>

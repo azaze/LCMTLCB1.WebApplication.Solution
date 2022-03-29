@@ -1,0 +1,697 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = Resource.Container;
+}
+@using LCMTLCB1WebApplication.Resources
+
+<style>
+    table#titlebar {
+        width: 100%;
+    }
+
+        table#titlebar tr {
+            height: 40px;
+        }
+
+        table#titlebar td#title1 {
+            width: 25px;
+            background-image: url(../images/TitleBG1.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        table#titlebar td#title2 {
+            background-image: url(../images/TitleBG2.png);
+            background-repeat: repeat-x;
+        }
+
+        table#titlebar td#title3 {
+            width: 117px;
+            background-image: url(../images/TitleBG3.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+    /*-------------------------------------------------------*/
+    /*-------------------------------------------------------*/
+    /*--------------------Start Here-------------------------*/
+    /*-------------------------------------------------------*/
+    /*-------------------------------------------------------*/
+
+    .rowMain {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+        .rowMain img {
+            width: 100%
+        }
+
+        .rowMain .detail div {
+            display: table;
+            height: 100%;
+        }
+
+            .rowMain .detail div p {
+                vertical-align: middle;
+                display: table-cell;
+            }
+
+    @@media (min-width: 992px) {
+        .divL {
+            padding-right: 0;
+        }
+
+        .divR {
+            padding-left: 0;
+        }
+    }
+</style>
+<div class="container backgroundVision">
+    <table id="titlebar">
+        <tr>
+            <td id="title1"></td>
+            <td id="title2" class="h2"><strong style="color:#FFFFFF">@Resource.e_Terminal</strong></td>
+            <td id="title3"></td>
+        </tr>
+    </table>
+    <div class="col-sm-12 col-md-12"><center><hr style="width:100%;margin:5px 0 0 0;border: 3px solid #0950A0;opacity:1"></center></div>
+    @*-------------------------------------------------------*@
+    @*-------------------------------------------------------*@
+    @*--------------------Start Here-------------------------*@
+    @*-------------------------------------------------------*@
+    @*-------------------------------------------------------*@
+
+    <div class=" ">
+        @* <div class="row">
+            <div class="col-md-12 col-lg-12  ">
+            <br />
+            <div class="topicHead-Center"> @Resource.Container.ToUpper()</div>
+            </div>
+            </div>*@
+
+
+        <br />
+        <br />
+
+        @if (Model.status != "OK")
+        {
+            <br />
+            <br />
+            <br />
+            <br />
+
+            <br />
+            <br />
+
+            <div class="row eterminalBody">
+                <div class="col-md-2 col-lg-2">
+                </div>
+                <div class="col-md-8 col-lg-8">
+                    <div class="row" style="background-color:#F9F9F9">
+                        <div class="col-md-2 col-lg-2">
+                        </div>
+
+
+                        <div class="col-md-8 col-lg-8 h6 txtCenter">
+                            <br />  <br />  <br />
+                            @(Model.msg)
+                            <br />  <br />  <br />
+                        </div>
+
+
+                        <div class="col-md-2 col-lg-2">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                </div>
+
+            </div>
+             <script type="text/javascript">
+                $(document).ready(function(){
+
+                    $('#btnBack').click(function () {
+                        redirect("/Eterminal/Container?containerNumber=&bookingNumber=&p=");
+                    })
+                });
+
+            </script>
+        }
+        else
+        {
+            <div class="row ">
+                <div class="col-md-2 col-lg-2">
+                </div>
+                <div class="col-md-8 col-lg-8">
+                    <div class="row" style="background-color:#F9F9F9">
+                        <div class="col-md-8 col-lg-8 dv-Head-bar">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label txtRight "><strong> UNIT INFORMATION:</strong></label>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <label class="col-form-label">@Model.unit.containerid</label>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-lg-4 dv-Head-bar">
+                            <div class="form-group row">
+                                <label class="col-sm-12 col-form-label txtRight"> As of @DateTime.Now.ToString("dd/MM/yyyy HH:mm") </label>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2 txtRight">
+                </div>
+
+            </div>
+
+            <div class="row  ">
+                <div class="col-md-2 col-lg-2">
+                </div>
+                <div class="col-md-8 col-lg-8">
+                    <div class="row" style="background-color:#F9F9F9">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label txtRight ">Order:</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <label class="col-form-label">@Model.unit.booking.ordernumber @Model.unit.booking.type</label>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                </div>
+            </div>
+
+            <div class="row  ">
+                <div class="col-md-2 col-lg-2">
+                </div>
+                <div class="col-md-8 col-lg-8">
+                    <div class="row" style="background-color:#F9F9F9">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label txtRight ">In/Out:</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <label class="col-form-label">@(  Model.unit.handlingtype)</label>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                </div>
+
+            </div>
+            <div class="row  ">
+                <div class="col-md-2 col-lg-2">
+                </div>
+                <div class="col-md-8 col-lg-8">
+                    <div class="row" style="background-color:#F9F9F9">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label txtRight ">Line:</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <label class="col-form-label">@(  Model.unit.booking.linecode )</label>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                </div>
+            </div>
+            <div class="row  ">
+                <div class="col-md-2 col-lg-2">
+                </div>
+                <div class="col-md-8 col-lg-8">
+                    <div class="row" style="background-color:#F9F9F9">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label txtRight "> 	Full/Empty:</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <label class="col-form-label">@(  Model.unit.loadingstatus )</label>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                </div>
+            </div>
+            <div class="row  ">
+                <div class="col-md-2 col-lg-2">
+                </div>
+                <div class="col-md-8 col-lg-8">
+                    <div class="row" style="background-color:#F9F9F9">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label txtRight ">  	ISO:</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <label class="col-form-label">@(  Model.unit.isocode)</label>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                </div>
+            </div>
+            <div class="row  ">
+                <div class="col-md-2 col-lg-2">
+                </div>
+                <div class="col-md-8 col-lg-8">
+                    <div class="row" style="background-color:#F9F9F9">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label txtRight ">VGM:</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <label class="col-form-label">@(string.Format("{0:#,##0}",Model.unit.grossweight)+ " Kg."   )</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                </div>
+            </div>
+            <div class="row  ">
+                <div class="col-md-2 col-lg-2">
+                </div>
+                <div class="col-md-8 col-lg-8">
+                    <div class="row" style="background-color:#F9F9F9">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label txtRight ">Seal 1:</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <label class="col-form-label">@(Model.unit.seal1)</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                </div>
+            </div>
+            <div class="row  ">
+                <div class="col-md-2 col-lg-2">
+                </div>
+                <div class="col-md-8 col-lg-8">
+                    <div class="row" style="background-color:#F9F9F9">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label txtRight ">Seal 2:</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <label class="col-form-label">@(Model.unit.seal2)</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                </div>
+            </div>
+            <div class="row  ">
+                <div class="col-md-2 col-lg-2">
+                </div>
+                <div class="col-md-8 col-lg-8">
+                    <div class="row" style="background-color:#F9F9F9">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label txtRight ">Set Temp:</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <label class="col-form-label">@(Model.unit.ordertemperature)</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                </div>
+            </div>
+            <div class="row  ">
+                <div class="col-md-2 col-lg-2">
+                </div>
+                <div class="col-md-8 col-lg-8">
+                    <div class="row" style="background-color:#F9F9F9">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label txtRight ">Actual Temp:</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <label class="col-form-label">@(Model.unit.registeredtemperature)</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                </div>
+            </div>
+            <div class="row  ">
+                <div class="col-md-2 col-lg-2">
+                </div>
+                <div class="col-md-8 col-lg-8">
+                    <div class="row" style="background-color:#F9F9F9">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label txtRight ">IMDG:</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <label class="col-form-label">@(Model.unit.imdgclass)</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                </div>
+            </div>
+            <div class="row  ">
+                <div class="col-md-2 col-lg-2">
+                </div>
+                <div class="col-md-8 col-lg-8">
+                    <div class="row" style="background-color:#F9F9F9">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label txtRight ">OOG:</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <label class="col-form-label">@(Model.unit.outofgauge)</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                </div>
+            </div>
+            <br />
+
+            <br />
+            <div class="row ">
+                <div class="col-md-2 col-lg-2">
+                </div>
+                <div class="col-md-8 col-lg-8">
+                    <div class="row" style="background-color:#F9F9F9">
+                        <div class="col-md-12 col-lg-12 dv-Head-bar">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label txtRight "><strong> @(Model.unit.handlingtype=="IN"?"ARRIVAL DETAILS":"DEPARTURE DETAILS") </strong></label>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <label class="col-form-label"> </label>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                </div>
+
+            </div>
+
+            <div class="row  ">
+                <div class="col-md-2 col-lg-2">
+                </div>
+                <div class="col-md-8 col-lg-8">
+                    <div class="row" style="background-color:#F9F9F9">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label txtRight ">@Model.unit.handlingtype:</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <label class="col-form-label">@Model.unit.carriertype @string.Format("{0:dd/MM/yyyy HH:mm}", Model.unit.movetime) @Model.unit.phase  </label>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                </div>
+
+            </div>
+            <div class="row  ">
+                <div class="col-md-2 col-lg-2">
+                </div>
+                <div class="col-md-8 col-lg-8">
+                    <div class="row" style="background-color:#F9F9F9">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label txtRight ">Carrier Operator:</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <label class="col-form-label">@Model.unit.carrieroperator @Model.unit.carrieroperatordesc  </label>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                </div>
+            </div>
+
+            @if (Model.unit.carriertype == "TR")
+            {
+                <div class="row  ">
+                    <div class="col-md-2 col-lg-2">
+                    </div>
+                    <div class="col-md-8 col-lg-8">
+                        <div class="row" style="background-color:#F9F9F9">
+                            <div class="col-md-12 col-lg-12">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label txtRight ">License:</label>
+                                    <div class="col-sm-8">
+                                        <div class="input-group">
+                                            <label class="col-form-label">@(  Model.unit.idnumber)</label>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-lg-2">
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="row  ">
+                    <div class="col-md-2 col-lg-2">
+                    </div>
+                    <div class="col-md-8 col-lg-8">
+                        <div class="row" style="background-color:#F9F9F9">
+                            <div class="col-md-12 col-lg-12">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label txtRight ">Vessel:</label>
+                                    <div class="col-sm-8">
+                                        <div class="input-group">
+                                            <label class="col-form-label">@Model.unit.carrier  @Model.unit.vesselname</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-lg-2">
+                    </div>
+                </div>
+                <div class="row  ">
+                    <div class="col-md-2 col-lg-2">
+                    </div>
+                    <div class="col-md-8 col-lg-8">
+                        <div class="row" style="background-color:#F9F9F9">
+                            <div class="col-md-12 col-lg-12">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label txtRight ">Voyage:</label>
+                                    <div class="col-sm-8">
+                                        <div class="input-group">
+                                            <label class="col-form-label">@Model.unit.idnumber</label>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-lg-2">
+                    </div>
+                </div>
+
+            }
+            <div class="row  ">
+                <div class="col-md-2 col-lg-2">
+                </div>
+                <div class="col-md-8 col-lg-8">
+                    <div class="row" style="background-color:#F9F9F9">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label txtRight ">Position:</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <label class="col-form-label">@(  Model.unit.position )</label>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                </div>
+            </div>
+            @if (Model.unit.handlingtype == "IN")
+            {
+                <div class="row  ">
+                    <div class="col-md-2 col-lg-2">
+                    </div>
+                    <div class="col-md-8 col-lg-8">
+                        <div class="row" style="background-color:#F9F9F9">
+                            <div class="col-md-12 col-lg-12">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label txtRight "> 	Last Port:</label>
+                                    <div class="col-sm-8">
+                                        <div class="input-group">
+                                            <label class="col-form-label">@(  Model.unit.portofdischarge )</label>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-lg-2">
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="row  ">
+                    <div class="col-md-2 col-lg-2">
+                    </div>
+                    <div class="col-md-8 col-lg-8">
+                        <div class="row" style="background-color:#F9F9F9">
+                            <div class="col-md-12 col-lg-12">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label txtRight ">Next Port:</label>
+                                    <div class="col-sm-8">
+                                        <div class="input-group">
+                                            <label class="col-form-label">@Model.unit.portofdischarge</label>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-lg-2">
+                    </div>
+                </div>
+            }
+
+            <div class="row  ">
+                <div class="col-md-2 col-lg-2">
+                </div>
+                <div class="col-md-8 col-lg-8">
+                    <div class="row" style="background-color:#F9F9F9">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label txtRight">  	Remark:</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <label class="col-form-label">@(  Model.unit.remark)</label>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                </div>
+            </div>
+            <br />
+            <script type="text/javascript">
+                $(document).ready(function(){
+
+                    $('#btnBack').click(function () {
+                        redirect("/Eterminal/Container?containerNumber=@Model.unit.containerid&bookingNumber=@ViewBag.bookingNumber&p=@ViewBag.p");
+                    })
+                });
+
+            </script>
+
+        }
+        @*@if (Model.unit.handlingtype == "IN")
+            {
+            <div class="row  ">
+            <div class="col-md-2 col-lg-2">
+            </div>
+            <div class="col-md-8 col-lg-8">
+            <div class="row" s>
+            <div class="col-md-12 col-lg-12">
+            <div class="form-group row">
+            <label class="col-sm-12 col-form-label" style="color:red">
+            *Expect to depart by vessel @ViewBag.Vessel voyage @ViewBag.Voyage and discharge at port @ViewBag.Portofdischarge
+
+            </label>
+
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class="col-md-2 col-lg-2">
+            </div>
+            </div>
+            }*@
+
+    </div>
+    <button id="btnBack" class="btn btn-primary " style="width:90px;margin-left:10px;">
+        <i class="fa fa-backward"></i> Back
+    </button>
+    <br /> <br />
+</div>
+
+

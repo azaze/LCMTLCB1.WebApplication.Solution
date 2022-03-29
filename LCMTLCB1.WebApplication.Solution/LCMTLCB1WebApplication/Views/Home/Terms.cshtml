@@ -1,0 +1,348 @@
+﻿@{
+    ViewData["Title"] = Resource.Home;
+}
+@using LCMTLCB1WebApplication.Resources
+@model UserViewModel
+@*@Html.Raw(Resource.TestDetail)*@
+
+@*<div class="row">
+    <div class="col-sm-12 col-md-6">AAA</div>
+    <div class="col-sm-12 col-md-6">BBB</div>
+    </div>*@
+
+<style>
+    .bodycontent .imghead {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .bodycontent div.row > div {
+        margin-top: 20px;
+    }
+
+    @@media (min-width: 992px) {
+        .divV {
+            padding-right: 0;
+        }
+
+        .divM {
+            padding-left: 0;
+        }
+
+        .midMenu {
+            border-left: 1px solid rgb(33, 37, 41);
+            border-right: 1px solid rgb(33, 37, 41);
+        }
+
+        .patHeader, .safetyHeader {
+            font-size: 20px !important;
+        }
+
+        .safetyDetail {
+            font-size: 10px;
+        }
+    }
+
+    @@media (max-width: 575px) {
+        /* .safetyDetail{
+                                            font-size: 11px;
+                                        }*/
+    }
+
+    @@media (min-width: 1200px) {
+        .safetyDetail {
+            font-size: 12px;
+        }
+    }
+
+    @@media (max-width: 991px) {
+        .safetyDetail {
+            font-size: 18px;
+        }
+
+        .tblqMenu tr td {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    }
+
+    @@media (max-width: 767px) {
+    }
+
+    @@media (min-width: 768px) {
+    }
+
+    .divPat, .SafetyTrucker {
+        cursor: pointer;
+    }
+
+    .divVM, .divPat, .SafetyTrucker {
+        position: relative;
+        text-align: center;
+    }
+
+        .divVM img {
+            width: 100%;
+            /* background-repeat: no-repeat;
+                                        background-size: cover;*/
+        }
+
+        .divVM div.content {
+            width: 100%;
+            /*     border: 3px solid red; */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+
+        .divPat .content1 {
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            transform: translate(-0%, -0%);
+            margin-left: 20px;
+            padding-top: 10px;
+            color: white !important;
+            /* border: solid 1px red;*/
+        }
+
+        .divPat .content2 {
+            position: absolute;
+            bottom: 0px;
+            right: 15px;
+            transform: translate(-0%, -00%);
+            /*margin-left: 20px;
+
+                                        padding-top: 10px;*/
+            color: white;
+            padding-top: 10px;
+            color: white !important;
+            /*border: solid 1px red;*/
+            max-width: 50%;
+        }
+
+        .divPat .content3 {
+            position: absolute;
+            bottom: -20px;
+            right: 10px;
+            transform: translate(-0%, -0%);
+        }
+
+            .divPat .content3 a {
+                color: black;
+            }
+
+    .qMenu, .qMenu, .qMenu {
+        padding: 0 20px 0 20px;
+    }
+    /*    .qMenu1>div, .qMenu2>div, .qMenu3>div{
+                                        margin-top: 10px;
+                                        margin-bottom: 10px;
+                                    }*/
+
+    .SafetyTrucker img {
+        opacity: 0.3;
+    }
+
+    .patHeader {
+        font-size: 32px;
+    }
+
+    .safetyHeader {
+        font-size: 28px;
+    }
+
+    .SafetyTrucker .content1 {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        transform: translate(-0%, -0%);
+        margin-left: 12px;
+        color: white !important;
+        height: 100%;
+        width: 40%;
+        background-color: #094E96;
+        padding-left: 3px;
+        /*     border: solid 1px red;*/
+    }
+
+    .SafetyTrucker .content2 {
+        position: absolute;
+        top: 0%;
+        left: 40%;
+        transform: translate(-0%, -0%);
+        margin-left: -10px;
+        padding-top: 10px;
+        padding-right: 25px;
+        padding-left: 30px;
+        color: white !important;
+        height: 100%;
+        width: 60%;
+        background-color: #094E96;
+        /* border: solid 1px red;*/
+    }
+
+    .tblqMenu {
+        width: 100%;
+        height: 100%;
+    }
+
+        .tblqMenu tr {
+            height: 20%;
+        }
+
+            .tblqMenu tr td {
+                /*padding-top: 5px;
+                                padding-bottom:5px;*/
+            }
+
+                .tblqMenu tr td button {
+                    width: 100%;
+                    max-height: 38px;
+                    vertical-align: middle;
+                    text-align: left;
+                }
+
+    @@media (min-width: 992px) and (max-width: 1199px) {
+        .tblqMenu tr td button {
+            font-size: 12px;
+        }
+    }
+
+    .homeFooter {
+        background-color: #0950A0;
+        color: #ffffff;
+        padding: 0 10px 10px 10px;
+    }
+
+        .homeFooter a {
+            color: #ffffff;
+        }
+
+            .homeFooter a:hover {
+                color: #eeeeee;
+                font-weight: bold;
+            }
+
+        .homeFooter .divexLink > div {
+            display: table-row;
+        }
+
+            .homeFooter .divexLink > div > div {
+                display: table-cell;
+                height: 100%;
+                vertical-align: middle;
+                padding: 0 5px 0 5px;
+            }
+
+                .homeFooter .divexLink > div > div > img {
+                    max-height: 50px;
+                    max-width: 50px;
+                }
+
+    table#titlebar {
+        width: 100%;
+    }
+
+        table#titlebar tr {
+            height: 40px;
+        }
+
+        table#titlebar td#title1 {
+            width: 25px;
+            background-image: url(../images/TitleBG1.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        table#titlebar td#title2 {
+            background-image: url(../images/TitleBG2.png);
+            background-repeat: repeat-x;
+        }
+
+        table#titlebar td#title3 {
+            width: 117px;
+            background-image: url(../images/TitleBG3.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+</style>
+
+<div>
+
+    <table id="titlebar">
+        <tr>
+            <td id="title1"></td>
+            <td id="title2" class="h2"><strong style="color:#FFFFFF">@Resource.Privacy</strong></td>
+            <td id="title3"></td>
+        </tr>
+    </table>
+    <div class="col-sm-12 col-md-12"><center><hr style="width:100%;margin:5px 0 0 0;border: 3px solid #0950A0;opacity:1"></center></div>
+    <div class="row">
+        @*<div class="col-sm-12 col-md-12"><center><strong><span style="border-bottom:5px solid #120972;" class="h1">@Resource.Welcome</span></strong></></center></div>*@
+
+        <div class="col-md-12 col-lg-12" style="padding:50px">
+            <div class="page-content">
+                <div class="row">
+                    <div class="first grid-5-6 no-extended-padding unextended wpv-first-level wpv-grid" id="wpv-column-05f3600e1070772c192fdb42e6dff491" style="padding-bottom:0.05px; padding-top:0.05px">
+                        <h3>Terms of Use</h3>
+
+                        <p><strong>Use of this website&nbsp;</strong></p>
+
+                        <p>The information provided on this web site is not intended for distribution to, or use by, any person or entity in any jurisdiction or country where such distribution or use would be contrary to law or regulation thereof or which may subject the supplier of the service available through this web site and its affiliates to any regulatory requirement within such jurisdiction or country.</p>
+
+                        <p><strong>No Warranty&nbsp;</strong></p>
+
+                        <p>LCB Container Terminal 1 Co., LtdLimited (&ldquo;Lcb1&rdquo;) cannot and does not warrant the accuracy, validity, timeliness, completeness or availability of any obtained or compiled information on this web site. All information on this web site is provided on an &ldquo;as is&rdquo; basis and is for information purposes only, and is subject to change without prior notice. The use of this web site and any information contained therein or obtained therefrom is at your own risk, and Lcb1 assumes no responsibility whatsoever in connection with such use.</p>
+
+                        <p><strong>Non-Representation&nbsp;</strong></p>
+
+                        <p>Any opinion, comments or information of any person made given or distributed in or through this web site shall not be viewed as endorsed or agreed by Lcb1 or representing Lcb1&rsquo;s opinion or intention. Lcb1 particularly declares that if any person expresses an opinion or comments or provides advice or information on any political, social, economic, business or investment matters or defames any person on this web site and causes losses to Lcb1, Lcb1 reserves all rights to claim damages and/or apply for other legal remedies.</p>
+
+                        <p><strong>Limitation of Liability&nbsp;</strong></p>
+
+                        <p>In no event will Lcb1 or any of its shareholders directors or employees be liable or have any responsibility for damages of any kind, whether direct, indirect, special, consequential or incidental, resulting from access or use of, or inability to access or use, this web site or any web sites or pages linked to this web site, including (without limitation) damages resulting from the act or omission of any third party, even if any member of Lcb1 has been advised of the possibility thereof.</p>
+
+                        <p><strong>Use of Links&nbsp;</strong></p>
+
+                        <p>Should you leave this web site via a hyperlink contained herein, you are deemed to have left this web site. If you view content of web site that is not provided by Lcb1, you do so at your own risk. Lcb1 shall not be responsible for any damages or losses caused by any delays, defects or omissions that may exist in the services, information, content or anything provided in or obtained from such other web sites. Lcb1 makes no guarantees or representations as to, and shall have no liability whatsoever for, any electronic content delivered by any third party.</p>
+
+                        <p><strong>Copyright&nbsp;</strong></p>
+
+                        <p>The contents or information on this web site may not be reproduced, distributed or published in any media for any purpose without prior express written consent from Lcb1. If you download any information or software from this web site, you agree that such copy is only for your personal, non-commercial use, and you will not copy it or remove or obscure any copyright or other notices or legends contained in any such information.</p>
+
+                        <p><strong>Trademarks&nbsp;</strong></p>
+
+                        <p>The words Lcb1 and various logos are the trademarks of Lcb1 corporate&rsquo;s website. Such trademarks and logos used are the property of Lcb1. Other names appearing on the website may be trademarks of their respective owners.</p>
+
+                        <p><strong>Governing Law&nbsp;</strong></p>
+
+                        <p>The terms and conditions contained herein shall be construed in accordance with the laws of the Thailand. Without regard to the conflict of law provisions thereof, you agree that any claim you might have against Lcb1 shall be brought before the courts of Thailand.</p>
+
+                        <p>
+                            <strong>Privacy Policy</strong><br />
+                            <br />
+                            Please see our Privacy Policy for information concerning our collection, use, disclosure and transfer of your personal data. Your acceptance of these Terms of Use constitutes acceptance of our Privacy Policy.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+</div>
+
+

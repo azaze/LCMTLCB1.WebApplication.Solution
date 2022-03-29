@@ -1,0 +1,435 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = Resource.Award;
+}
+@using LCMTLCB1WebApplication.Resources
+
+<style>
+    table#titlebar {
+        width: 100%;
+    }
+
+        table#titlebar tr {
+            height: 40px;
+        }
+
+        table#titlebar td#title1 {
+            width: 25px;
+            background-image: url(../images/TitleBG1.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        table#titlebar td#title2 {
+            background-image: url(../images/TitleBG2.png);
+            background-repeat: repeat-x;
+        }
+
+        table#titlebar td#title3 {
+            width: 117px;
+            background-image: url(../images/TitleBG3.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+
+
+    /*-------------------------------------------------------*/
+    /*-------------------------------------------------------*/
+    /*--------------------Start Here-------------------------*/
+    /*-------------------------------------------------------*/
+    /*-------------------------------------------------------*/
+    .rowMain {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+        .rowMain div.titlename {
+            margin-bottom: 10px;
+        }
+
+    .titlename > span {
+        border-bottom: 3px solid #0950A0
+    }
+
+    .card:hover {
+        transform: scale(1.1);
+        transition: transform .2s;
+        z-index: 99999;
+        /*cursor: pointer;*/
+        /*border: 1px solid #FFDF85;*/
+    }
+
+    .card.hover {
+        transform: scale(1.1);
+        transition: transform .2s;
+        z-index: 99999;
+        cursor: pointer;
+        /*border: 1px solid #FFDF85;*/
+    }
+
+    .card.non-hover {
+        transform: scale(1);
+        transition: transform .2s;
+        cursor: pointer;
+        /*border: 1px solid #FFDF85;*/
+    }
+
+    .card, .AwardMasterImage {
+        margin-bottom: 20px;
+        -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.50);
+        -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.50);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.50);
+    }
+</style>
+
+<div>
+    <table id="titlebar">
+        <tr>
+            <td id="title1"></td>
+            <td id="title2" class="h2"><strong style="color:#FFFFFF">@Resource.Award</strong></td>
+            <td id="title3"></td>
+        </tr>
+    </table>
+    <div class="col-sm-12 col-md-12"><center><hr style="width:100%;margin:5px 0 0 0;border: 3px solid #0950A0;opacity:1"></center></div>
+    @*-------------------------------------------------------*@
+    @*-------------------------------------------------------*@
+    @*--------------------Start Here-------------------------*@
+    @*-------------------------------------------------------*@
+    @*-------------------------------------------------------*@
+
+    <div class="row rowMain">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10"><div class="h2 titlename"><span>Awards - Recognition</span></div></div>
+        <div class="col-lg-1"></div>
+
+
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="">
+                <p>
+                    LCB1 Group of Laem Chabang takes Global Award<br />
+                    At a ceremony in Ho Chi Minh City, the LCB1 Group wins<br />
+                    the title of 'Business Unit of the Year' within leading terminals operator APM Terminals' global portfolio of businesses
+                </p>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+
+        <div class="col-4 col-sm-4 col-lg-12"></div>
+        <div class="col-4 col-sm-4">
+            <div>
+                <img src="~/images/Award.jpg" class="AwardMasterImage" style="width:100%" />
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div>
+                <p>
+                    Ho Chi Minh City, Vietnam - In competition with 50+ container terminals and a wide range of other companies within marine and transport services in APM Terminals' global portfolio of activities, Thailand based LCB1 Group(LCB Container Terminal 1 Ltd. and LCMT Company Ltd.)in which APM Terminals holds a 35% share took the price of Best BusinessUnit of the Year,an award recognizing outstanding performance amongst APM Terminals'global activities.<br /><br />
+                    The award was given on basis of a very strong commercial performance. The terminal has succeeded during 2010 to grow revenues while at the same time trimming unnecessary costs and significantly improve customer satisfaction. Importantly, the terminal has also succeeded in maintaining a perfect score for a second year running with no Lost Time Incidents (LTIF) recorded as well as achieving to reduce CO2 emissions per TEU by 9.6% in 2010 over the previous year.<br />
+                    <strong>Martin Gaard Christiansen</strong>, Chief Executive of APM Terminals in the Asia-Pacific Region said,LCB1's achievementis remarkable. The terminal has excelled in a wide range of categories at the same time. It is not an easy task to reduce costs and at the same time improve customer satisfaction. It is also very gratifying to see that  the terminal has been able to maintain a perfect LTIF score and improving environmental performance, even as the terminal is growing volumes. Health, safety and environmental performance are absolute priorities in APM Terminals'  view and we do not acceptcompromises.Considering these many achievements, LCB1's performance is truly world class.<br />
+                    <strong>Mr. Niels Hansen</strong>, Chief Executive of LCB1 said, "the honor of winning this award goes to the 412 dedicatedemployees at our terminal in Laem Chabang. Without their constant commitment to excellence and relentless daily efforts to improve we would not have won.Mr.Hansen continued,the award is a clear demonstrationthat our organization in Thailand has reached a skill and efficiency level which allows us to compete with - and beat - some of the very best maritimeterminal companies around the world."
+
+
+                </p>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 20px;"></div>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10"><div class="h3 titlename"><span>Other Award</span></div></div>
+        <div class="col-lg-1"></div>
+
+         <div class="col-12"  style="padding:0 50px 0px 50px;">
+       <div class="col-12">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+
+                    <h3> <img src="~/images/icons8-award-64.png" class="card-img-top" alt="..." style="width:64px;height:64px;">2007</h3>
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card">
+                        <img src="~/images/Awards/Award11.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">รางวัลจรรยาบรรณดีเด่น 2007</h5>
+                            @*<p class="card-text">Leading terminals operator APM Terminals' global portfolio of businesses</p>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+
+                    <h3> <img src="~/images/icons8-award-64.png" class="card-img-top" alt="..." style="width:64px;height:64px;">2010</h3>
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card">
+                        <img src="~/images/Awards/Award12.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">บรรษัทภิบาลดีเด่น 2010</h5>
+                            @*<p class="card-text">Leading terminals operator APM Terminals' global portfolio of businesses</p>*@
+                        </div>
+                    </div>
+                </div>
+          
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card">
+                    <img src="~/images/Awards/Award17.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">2010 Annual Award - Process Excellence</h5>
+                        @*<p class="card-text">Leading terminals operator APM Terminals' global portfolio of businesses</p>*@
+                    </div>
+                </div>
+            </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card">
+                    <img src="~/images/Awards/Award18.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">2010 Annual Award - Sustainability</h5>
+                        @*<p class="card-text">Leading terminals operator APM Terminals' global portfolio of businesses</p>*@
+                    </div>
+                </div>
+            </div>
+        </div></div>
+        <div class="col-12">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+
+                    <h3> <img src="~/images/icons8-award-64.png" class="card-img-top" alt="..." style="width:64px;height:64px;">2011</h3>
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card">
+                        <img src="~/images/Awards/Award03.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">EIA Monotoring Awards 2011</h5>
+                            @*<p class="card-text">Leading terminals operator APM Terminals' global portfolio of businesses</p>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+
+                    <h3> <img src="~/images/icons8-award-64.png" class="card-img-top" alt="..." style="width:64px;height:64px;">2012</h3>
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card">
+                        <img src="~/images/Awards/Award07.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Zero Accident Campaign 2012</h5>
+                            @*<p class="card-text">Leading terminals operator APM Terminals' global portfolio of businesses</p>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+
+                    <h3> <img src="~/images/icons8-award-64.png" class="card-img-top" alt="..." style="width:64px;height:64px;">2013</h3>
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card">
+                        <img src="~/images/Awards/Award04.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Green Energy Awards 2013</h5>
+                            @*<p class="card-text">Leading terminals operator APM Terminals' global portfolio of businesses</p>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+
+                    <h3> <img src="~/images/icons8-award-64.png" class="card-img-top" alt="..." style="width:64px;height:64px;">2014</h3>
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card">
+                        <img src="~/images/Awards/Award01.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Green Energy Awards 2014</h5>
+                            @*<p class="card-text">Leading terminals operator APM Terminals' global portfolio of businesses</p>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card">
+                        <img src="~/images/Awards/Award02.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">EIA Monotoring Awards 2014</h5>
+                            @*<p class="card-text">Leading terminals operator APM Terminals' global portfolio of businesses</p>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+
+                    <h3> <img src="~/images/icons8-award-64.png" class="card-img-top" alt="..." style="width:64px;height:64px;">2016</h3>
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card">
+                        <img src="~/images/Awards/Award09.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Zero Accident Campaign 2016</h5>
+                            @*<p class="card-text">Leading terminals operator APM Terminals' global portfolio of businesses</p>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card">
+                        <img src="~/images/Awards/Award13.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">EIA Monotoring Awards 2016</h5>
+                            @*<p class="card-text">Leading terminals operator APM Terminals' global portfolio of businesses</p>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+        <div class="col-12">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+
+                    <h3> <img src="~/images/icons8-award-64.png" class="card-img-top" alt="..." style="width:64px;height:64px;">2019</h3>
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card">
+                        <img src="~/images/Awards/Award10.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Zero Accident Campaign 2019</h5>
+                            @*<p class="card-text">Leading terminals operator APM Terminals' global portfolio of businesses</p>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="col-12">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+
+                    <h3> <img src="~/images/icons8-award-64.png" class="card-img-top" alt="..." style="width:64px;height:64px;">2020</h3>
+
+
+                </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card">
+                        <img src="~/images/Awards/Award08.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Zero Accident Campaign 2020</h5>
+                            @*<p class="card-text">Leading terminals operator APM Terminals' global portfolio of businesses</p>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="col-12">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+
+                    <h3> <img src="~/images/icons8-award-64.png" class="card-img-top" alt="..." style="width:64px;height:64px;">2021</h3>
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card">
+                        <img src="~/images/Awards/Award05.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Zero Accident Campaign 2021</h5>
+                            @*<p class="card-text">Leading terminals operator APM Terminals' global portfolio of businesses</p>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+    </div>
+
+</div>
+
+<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                @*<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>*@
+                <img src="" class="imagepreview" style="width: 100%;">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        //$('.card').on('click', function() {
+        //    $(this).mouseout();
+        //    $('.imagepreview').attr('src', $(this).find('img').attr('src'));
+        //    $('#imagemodal').modal('show');
+        //});
+
+        //$('.card').mouseover(function(){
+        //    $(this).removeClass("non-hover");
+        //    $(this).addClass("hover");
+        //});
+
+        //$('.card').mouseout(function(){
+        //    $(this).removeClass("hover");
+        //    $(this).addClass("non-hover");
+        });
+    })
+</script>

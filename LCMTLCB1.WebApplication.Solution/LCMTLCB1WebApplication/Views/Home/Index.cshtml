@@ -1,0 +1,730 @@
+﻿@{
+    ViewData["Title"] = Resource.Home;
+}
+@using LCMTLCB1WebApplication.Resources
+@model UserViewModel
+@*@Html.Raw(Resource.TestDetail)*@
+
+@*<div class="row">
+    <div class="col-sm-12 col-md-6">AAA</div>
+    <div class="col-sm-12 col-md-6">BBB</div>
+    </div>*@
+
+<style>
+    .bodycontent .imghead {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .bodycontent div.row > div {
+        margin-top: 20px;
+    }
+
+    @@media (min-width: 992px) {
+        .divV {
+            padding-right: 0;
+        }
+
+        .divM {
+            padding-left: 0;
+        }
+
+        .midMenu {
+            border-left: 1px solid rgb(33, 37, 41);
+            border-right: 1px solid rgb(33, 37, 41);
+        }
+
+        .patHeader, .safetyHeader {
+            font-size: 20px !important;
+        }
+
+        .safetyDetail {
+            font-size: 10px;
+        }
+    }
+
+    @@media (max-width: 575px) {
+        /* .safetyDetail{
+                                    font-size: 11px;
+                                }*/
+    }
+
+    @@media (min-width: 1200px) {
+        .safetyDetail {
+            font-size: 12px;
+        }
+    }
+
+    @@media (max-width: 991px) {
+        .safetyDetail {
+            font-size: 18px;
+        }
+
+        .tblqMenu tr td {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    }
+
+    @@media (max-width: 767px) {
+    }
+
+    @@media (min-width: 768px) {
+    }
+
+    .divPat, .SafetyTrucker {
+        cursor: pointer;
+    }
+
+    .divVM, .divPat, .SafetyTrucker {
+        position: relative;
+        text-align: center;
+    }
+
+        .divVM img {
+            width: 100%;
+            /* background-repeat: no-repeat;
+                                background-size: cover;*/
+        }
+
+        .divVM div.content {
+            width: 100%;
+            /*     border: 3px solid red; */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+
+        .divPat .content1 {
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            transform: translate(-0%, -0%);
+            margin-left: 20px;
+            padding-top: 10px;
+            color: white !important;
+            /* border: solid 1px red;*/
+        }
+
+        .divPat .content2 {
+            position: absolute;
+            bottom: 0px;
+            right: 15px;
+            transform: translate(-0%, -00%);
+            /*margin-left: 20px;
+
+                                padding-top: 10px;*/
+            color: white;
+            padding-top: 10px;
+            color: white !important;
+            /*border: solid 1px red;*/
+            max-width: 50%;
+        }
+
+        .divPat .content3 {
+            position: absolute;
+            bottom: -20px;
+            right: 10px;
+            transform: translate(-0%, -0%);
+        }
+
+            .divPat .content3 a {
+                color: black;
+            }
+
+    .qMenu, .qMenu, .qMenu {
+        padding: 0 20px 0 20px;
+    }
+    /*    .qMenu1>div, .qMenu2>div, .qMenu3>div{
+                                margin-top: 10px;
+                                margin-bottom: 10px;
+                            }*/
+
+    .SafetyTrucker img {
+        opacity: 0.3;
+    }
+
+    .patHeader {
+        font-size: 32px;
+    }
+
+    .safetyHeader {
+        font-size: 28px;
+    }
+
+    .SafetyTrucker .content1 {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        transform: translate(-0%, -0%);
+        margin-left: 12px;
+        color: white !important;
+        height: 100%;
+        width: 40%;
+        background-color: #094E96;
+        padding-left: 3px;
+        /*     border: solid 1px red;*/
+    }
+
+    .SafetyTrucker .content2 {
+        position: absolute;
+        top: 0%;
+        left: 40%;
+        transform: translate(-0%, -0%);
+        margin-left: -10px;
+        padding-top: 10px;
+        padding-right: 25px;
+        padding-left: 30px;
+        color: white !important;
+        height: 100%;
+        width: 60%;
+        background-color: #094E96;
+        /* border: solid 1px red;*/
+    }
+
+    .tblqMenu {
+        width: 100%;
+        height: 100%;
+    }
+
+        .tblqMenu tr {
+            height: 20%;
+        }
+
+            .tblqMenu tr td {
+                /*padding-top: 5px;
+                        padding-bottom:5px;*/
+            }
+
+                .tblqMenu tr td button {
+                    width: 100%;
+                    max-height: 38px;
+                    vertical-align: middle;
+                    text-align: left;
+                }
+
+    @@media (min-width: 992px) and (max-width: 1199px) {
+        .tblqMenu tr td button {
+            font-size: 12px;
+        }
+    }
+
+    .homeFooter {
+        background-color: #0950A0;
+        color: #ffffff;
+        padding: 0 10px 10px 10px;
+    }
+
+        .homeFooter a {
+            color: #ffffff;
+        }
+
+            .homeFooter a:hover {
+                color: #eeeeee;
+                font-weight: bold;
+            }
+
+        .homeFooter .divexLink > div {
+            display: table-row;
+        }
+
+            .homeFooter .divexLink > div > div {
+                display: table-cell;
+                height: 100%;
+                vertical-align: middle;
+                padding: 0 5px 0 5px;
+            }
+
+                .homeFooter .divexLink > div > div > img {
+                    max-height: 50px;
+                    max-width: 50px;
+                }
+
+    table#titlebar {
+        width: 100%;
+    }
+
+        table#titlebar tr {
+            height: 40px;
+        }
+
+        table#titlebar td#title1 {
+            width: 25px;
+            background-image: url(../images/TitleBG1.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        table#titlebar td#title2 {
+            background-image: url(../images/TitleBG2.png);
+            background-repeat: repeat-x;
+        }
+
+        table#titlebar td#title3 {
+            width: 117px;
+            background-image: url(../images/TitleBG3.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+    .imglink{
+        width: 50px;
+    }
+</style>
+<input type="hidden" id="hdnUser" asp-for="ssoUser.UserName" />
+<div>
+    <img class="imghead" src=~/images/HomeImg.jpg />
+    <table id="titlebar">
+        <tr>
+            <td id="title1"></td>
+            <td id="title2" class="h2"><strong style="color:#FFFFFF">@Resource.Welcome</strong></td>
+            <td id="title3"></td>
+        </tr>
+    </table>
+    <div class="col-sm-12 col-md-12"><center><hr style="width:100%;margin:5px 0 0 0;border: 3px solid #0950A0;opacity:1"></center></div>
+    <div class="row">
+        @*<div class="col-sm-12 col-md-12"><center><strong><span style="border-bottom:5px solid #120972;" class="h1">@Resource.Welcome</span></strong></></center></div>*@
+
+        <div class="col-md-12 col-lg-6">
+            <center>
+                <video width="90%" controls @*autoplay muted*@>
+                    <source src="~/videos/HomeVDO.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </center>
+        </div>
+        <div class="col-md-12 col-lg-6" style="padding:0 20px 0 20px;">
+            @Html.Raw(Resource.LCB_Profile)
+        </div>
+
+        <div class="col-sm-12 col-md-12"><center><hr style="width:50%;margin:0;"></center></div>
+
+        <div class="col-sm-12 col-md-12"><center><strong><span class="h1">Vision</span></strong></center></div>
+
+        <div class="">
+            <div class="row bg-light" style="margin:0">
+            <div class="col-md-12 offset-lg-3 col-lg-6 divV divVM" style="margin-top:0">
+                <img src="~/images/Vision.jpg" />
+                <div class="content">
+                    <strong>
+                        <div style="text-align:left" class="h1">@Resource.Vision</div>
+                        <span class="h3">@Resource.Vision_detail</span>
+                    </strong>
+                </div>
+            </div>
+            </div>
+        </div>
+
+@*        <div class="col-md-12 col-lg-6 divV divVM">
+            <img src="~/images/Vision.jpg" />
+            <div class="content">
+                <strong>
+                    <div style="text-align:left" class="h1">@Resource.Vision</div>
+                    <span class="h3">@Resource.Vision_detail</span>
+                </strong>
+            </div>
+        </div>*@
+       @* <div class="col-md-12 col-lg-6 divM divVM">
+            <img src="~/images/Mission.jpg" />
+            <div class="content">
+                <strong>
+                    <div style="text-align:left" class="h1">@Resource.Mission</div>
+                    <span class="h3">@Resource.Mission_detail</span>
+                </strong>
+            </div>
+
+        </div>*@
+
+        <div class="col-md-12 col-lg-4">
+
+            @if (ViewBag.UserName != null)
+            {
+                <div class="qMenu row">
+                    <div class="h1"><span style="color:red;">e</span> - Terminal</div>
+                    <div>
+                        <label class="form-label"><strong>Welcome : </strong></label>
+                        <label id="txtSessionUser" class="form-label" style="color:#888888"><strong>@ViewBag.UserName</strong></label>
+
+                    </div>
+
+                    <div>
+                        <center><input id="btnGotoEterminal" type="button" class="btn btn-LCMT" value="Goto e-Terminal" /></center>
+                    </div>
+                </div>
+
+            }
+            else
+            {
+
+                <form id="frmLogin" method="post" asp-controller="ETerminal" asp-action="login">
+                    <div class="qMenu row">
+                        <div class="h1"><span style="color:red;">e</span> - Terminal</div>
+                        <div>
+                            <label class="form-label"><strong>Username</strong></label>
+                            <input id="txtUser" asp-for="ssoUser.UserName" type="text" class="form-control">
+                        </div>
+                        <div>
+                            <label class="form-label"><strong>Password</strong></label>
+                            <input id="txtPsw" asp-for="ssoUser.Password" type="password" class="form-control">
+                        </div>
+                        <div>
+                            <center>
+                                <button type="button" id="btnLogin" class="btn btn-LCMT" style="width:30%">Login</button>
+                            </center>
+                        </div>
+                    </div>
+                </form>
+
+            }
+        </div>
+        <div class="col-sm-12 col-md-12 d-xs-block d-sm-block d-md-block d-lg-none"><center><hr style="width:50%;margin:0;"></center></div>
+        <div class="col-md-12 col-lg-4 midMenu">
+            <div class="qMenu row">
+                <div class="h1">Quick Search</div>
+                <div>
+                    <label class="form-label"><strong>Container</strong></label>
+                    <div class="input-group">
+                        <input id="txtContainerSearch" type="text" class="form-control" aria-describedby="btnGroupAddon" maxlength="11" />
+                        <div class="input-group-text btn btn-LCMT" id="btnContainerSearch"><i class="fa fa-search"></i></div>
+                    </div>
+                    <span style="color:red;font-size:11px" id="txtContainerSearchValid"></span>
+                </div>
+                <div>
+                    <label class="form-label"><strong>Booking</strong></label>
+                    <div class="input-group">
+                        <input id="txtBookingSearch" type="text" class="form-control" aria-describedby="btnGroupAddon2" />
+                        <div class="input-group-text btn btn-LCMT" id="btnBookingSearch"><i class="fa fa-search"></i></div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-12 d-xs-block d-sm-block d-md-block d-lg-none"><center><hr style="width:50%;margin:0;"></center></div>
+        <div class="col-md-12 col-lg-4">
+            <div class="qMenu row">
+                <div class="h1">Berth Schedule</div>
+                <div class="col-md-12 col-sm-12">
+                    <label class="form-label"><strong>Vessel Name</strong></label>
+
+                    <select id="txtVesselName" class="form-control select2" asp-items="ViewBag.Vessel"></select>
+
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <label class="form-label"><strong>Voyage In</strong></label>
+                    <input type="text" id="txtVoyageIn" class="form-control">
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <label class="form-label"><strong>Voyage Out</strong></label>
+                    <input type="text" id="txtVoyageOut" class="form-control">
+                </div>
+                <div>
+                    <center><button type="button" id="btnBirthSearchSearch" class="btn btn-LCMT" style="width:30%">Search</button></center>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-12 d-xs-block d-sm-block d-md-block d-lg-none"><center><hr style="width:50%;margin:0;"></center></div>
+
+        <div class="col-md-12 col-lg-4">
+            <div class="qMenu row ">
+                <div class="divPat">
+                    <img src="~/images/PAT.png" style="width:100%; height:auto;" />
+                    <div class="content1">
+                        <strong>
+                            <div style="text-align:left; color:#FFFFFF;" class="patHeader">LCP TRUCK<br /> QUEUE</div>
+                        </strong>
+                    </div>
+                    <div class="content2">
+                        <strong>
+                            <div style="text-align:left; color:#FFFFFF;" class="patHeader">PAT</div>
+                            <div style="text-align:left; color:#FFFFFF;">การท่าเรือแห่งประเทศไทย</div>
+                        </strong>
+                    </div>
+                    <div class="content3">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#patModal">See Detail...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 col-lg-4">
+            <div class="qMenu row ">
+                <div class="SafetyTrucker">
+                    <img src="~/images/Safety_Trucker.jpg" style="width:100%; height:auto;" />
+                    <div class="content2" style="display:table;">
+                        <div style="text-align:left;display:table-cell;vertical-align:middle;" class="safetyDetail">
+                            <strong style="color:#FFFFFF;">
+                                กฎระเบียบ ข้อควรทราบ และเส้นทางการจราจรภายในท่าเรือ B1 และ A0<br /><br />
+                                พนักงานขับรถหัวลากนอกทุกคนต้องเข้าชมวีดีโอและทำแบบทดสอบก่อนเข้าไปใช้บริการรับส่งตู้สินค้า ในท่าเรือ B1 และ A0
+                            </strong>
+                        </div>
+
+                    </div>
+                    <div class="content1" style="display:table">
+                        <div style="text-align:left;display:table-cell;vertical-align:middle;" class="safetyHeader"><strong style="color:#FFFFFF;">Safety Induction for External Truckers</strong></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-lg-4">
+            <div class="qMenu row" style="height:100%;">
+                <div>
+                    <table class="tblqMenu">
+                        <tr><td><button type="button" class="btn btn-LCMT btnshadow quicklink1">- @Resource.e_Payment</button></td></tr>
+                        <tr><td><button type="button" class="btn btn-LCMT btnshadow quicklink2">- @Resource.Create_Shore_Online</button></td></tr>
+                        <tr><td><button type="button" class="btn btn-LCMT btnshadow quicklink3">- @Resource.Check_Shore_Online</button></td></tr>
+                        <tr><td><button type="button" class="btn btn-LCMT btnshadow quicklink4">- @Resource.Import_Charge</button></td></tr>
+                        <tr><td><button type="button" class="btn btn-LCMT btnshadow quicklink5">- @Resource.CFS_Online_LCL</button></td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!---------News----------->
+        <!------------------------>
+        <div>
+            <div class="homeFooter">
+                <div class="row">
+                    <div class="col-md-12 col-lg-8">
+                        <div class="row divexLink">
+                            <div class="col-xs-12 col-sm-6 ">
+                                <div><img class="imglink" src="~/images/pat_logo.png" /></div>
+                                <div><a href="http://www.port.co.th/cs/internet/internet/index.html" target="_blank">Port Authority of Thailand</a></div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <div><img class="imglink" src="~/images/laemchabang_logo.png" /></div>
+                                <div><a href="http://lcp.port.co.th/cs/internet/lcp/index.html" target="_blank">Laem Chabang Port</a></div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <div><img class="imglink" src="~/images/Soolakakon_logo.png" /></div>
+                                <div><a href="https://www.customs.go.th/" target="_blank">Thai Customs Department</a></div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <div><img class="imglink" src="~/images/bsaa_logo.png" /></div>
+                                <div><a href="http://www.thaibsaa.com/" target="_blank">Bangkok Shipowners and Agents Association (BSAA)</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-4">
+                        <strong style="color:#FFFFFF">Contact</strong><br />
+
+                        LCB CONTAINER TERMINAL 1 LTD. <br />
+                        LCMT COMPANY LTD.<br />
+                        Toong Sukhla, Sriracha, Chonburi, 20230, Thailand<br /><br />
+
+                        <i class="fas fa-phone-alt"></i> &nbsp; <a href="tel:+6638408600">+66 38 408 600-99</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+   
+<partial name="~/Views/Home/_PatModal.cshtml" />
+<script type="text/javascript">
+        $(document).ready(function(){
+            $(".SafetyTrucker>.content2").hide();
+            //$(".SafetyTrucker>.content2>.safetyDetail").hide();
+            $('.SafetyTrucker').hover(function() {
+                $(".SafetyTrucker>.content2").fadeIn(200);
+            },function() {
+                $(".SafetyTrucker>.content2").fadeOut(200);
+            });
+            $(".select2").select2({
+                        placeholder: "Select",
+                        allowClear: false
+             });
+            var patModal = new bootstrap.Modal(document.getElementById('patModal'))
+            patModal.show();
+             $("#txtContainerSearch").on("keydown keyup change focus", function(){
+                    var value = $(this).val();
+                    if (value=='') {
+                       $("#txtContainerSearchValid").text("");
+
+                    }else if (value.length < 11){
+                          $("#txtContainerSearchValid").text("* text too short (11 digit).");
+
+                    }else{
+                        $("#txtContainerSearchValid").text("");
+                    }
+            });
+
+            $("div.divPat .content1, div.divPat .content2,div.divPat img").click(function(){
+                window.open("http://www.truckq.port.co.th/","_blank");
+            })
+            $("div.SafetyTrucker").click(function(){
+                $(".SafetyTrucker>.content2").hide();
+                window.open("https://safety.lcb1.com/","_blank");
+            })
+            $(".quicklink1").click(function(){
+                window.open("https://e-payment.lcb1.com/auth/login/?next=/order/","_blank");
+            })
+            $(".quicklink2").click(function(){
+                window.open("https://e-payment.lcb1.com/auth/login/?next=/shorepass/","_blank");
+            })
+            $(".quicklink3").click(function(){
+                window.open("https://e-payment.lcb1.com/booking/report","_blank");
+            })
+            $(".quicklink4").click(function(){
+                window.open("https://e-payment.lcb1.com/bl/report","_blank");
+            })
+            $(".quicklink5").click(function(){
+                window.open("https://e-payment.lcb1.com/cargo/schedule","_blank");
+            })
+
+            $("#btnBookingSearch").click(function () {
+                if($("#txtBookingSearch").val()==''){
+                    $("#txtBookingSearch").focus();
+                    return;
+                }
+                 $("#txtBookingSearch").val($("#txtBookingSearch").val().toUpperCase());
+                redirectNewTab("/Booking?bookingNumber="+$("#txtBookingSearch").val());
+            })
+
+            $("#btnContainerSearch").click(function () {
+                if($("#txtContainerSearch").val()==''){
+                    $("#txtContainerSearch").focus();
+                    return;
+                }
+
+
+                    if ($("#txtContainerSearch").val().length < 11){
+                        $("#txtContainerSearchValid").text("* text too short (11 digit).");
+                     return;
+                    }
+                     $("#txtContainerSearch").val($("#txtContainerSearch").val().toUpperCase());
+                redirectNewTab("/Container?containerNumber="+$("#txtContainerSearch").val());
+            })
+            $("#btnBirthSearchSearch").click(function () {
+                if($("#txtVesselName").val()==''){
+                    $("#txtVesselName").focus();
+                    return;
+                }
+                //if($("#txtVoyageIn").val()==''){
+                //    $("#txtVoyageIn").focus();
+                //    return;
+                //}
+                //if($("#txtVoyageOut").val()==''){
+                //    $("#txtVoyageOut").focus();
+                //    return;
+                //}
+
+                redirectNewTab("/BerthSchedule?vesselName="+$("#txtVesselName").val()+'&voyageIn='+$("#txtVoyageIn").val()+'&VoyageOut='+$("#txtVoyageOut").val());
+            })
+            $("#btnLogin").click(function () {
+                if($("#txtUser").val()==''){
+                    $("#txtUser").focus();
+                    return;
+                }
+                if($("#txtPsw").val()==''){
+                    $("#txtPsw").focus();
+                    return;
+                }
+                              var httpData =  { "UserName":$("#txtUser").val() , "Password": $("#txtPsw").val() } ;
+
+                                $.ajax({
+                                    type: 'POST',
+                                     url: '/Eterminal/Login',
+                                    data: JSON.stringify(httpData),
+                                    contentType: 'application/json',
+                                    success: function (data) {
+                                        var obj = JSON.parse(JSON.stringify(data));
+
+                                             if (obj.status=="OK") {
+                                                    redirect("/eTerminal");
+                                             }else{
+                                                   alert(obj.msg);
+                                             }
+
+                                    }
+                                });
+            })
+            $('#txtPsw').keypress(function(event){
+                var keycode = (event.keyCode ? event.keyCode : event.which);
+                if(keycode == '13'){
+                    $("#btnLogin").click();
+                }
+            });
+
+            $("#btnGotoEterminal").click(function () {
+                 redirect("/eTerminal");
+            })
+            var input = document.getElementById("txtBookingSearch");
+                    input.addEventListener("keyup", function(event) {
+                      if (event.keyCode === 13) {
+                       event.preventDefault();
+                       document.getElementById("btnBookingSearch").click();
+                      }
+                    });
+                    var input = document.getElementById("txtContainerSearch");
+                    input.addEventListener("keyup", function(event) {
+                      if (event.keyCode === 13) {
+                       event.preventDefault();
+                       document.getElementById("btnContainerSearch").click();
+                      }
+                    })
+
+                    ;
+                   
+
+        })
+        window.addEventListener('load', function(){
+      window.cookieconsent.initialise({
+       revokeBtn: "<div class='cc-revoke'></div>",
+       type: "opt-in",
+       theme: "classic",
+       palette: {
+           popup: {
+               background: "#000",
+               text: "#fff"
+            },
+           button: {
+               background: "#fd0",
+               text: "#000"
+            }
+        },
+       content: {
+           link: "What is cookie",
+           href: "Home/Cookie"
+        },
+        onInitialise: function(status) {
+          if(status == cookieconsent.status.allow) myScripts();
+        },
+        onStatusChange: function(status) {
+          if (this.hasConsented()) myScripts();
+        }
+      })
+    });
+        function myScripts() {
+
+   // Paste here your scripts that use cookies requiring consent. See examples below
+
+   // Google Analytics, you need to change 'UA-00000000-1' to your ID
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-00000000-1', 'auto');
+      ga('send', 'pageview');
+
+
+   // Facebook Pixel Code, you need to change '000000000000000' to your PixelID
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '000000000000000');
+      fbq('track', 'PageView');
+
+}
+</script>

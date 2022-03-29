@@ -1,0 +1,76 @@
+﻿@using LCMTLCB1WebApplication.Services.DataModels
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model NewsListViewModel
+
+<style>
+    .news{
+        
+    }
+
+    .Thumbnail{
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    .news-detail{
+        height:75px;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-line-clamp: 3;
+    }
+
+    .newsSubject{
+        cursor: pointer;
+    }
+
+    @@media (max-width: 767px) {
+        .news-detail{
+            height:85px;
+            -webkit-line-clamp: 4;
+        }
+    }
+</style>
+
+<div class=row>
+    @{
+        foreach(News data in Model.NewsList)
+        {
+            <div class="col-md-6">
+                <div class="card mb-3" newsid="@data.NewsID">
+                    <div class="row g-0">
+                        <div class="col-4 overlayMiddle">
+                            <div class="overlayMiddle-element">
+                                <center><img src="@data.Thumbnail" class="img-fluid rounded-start Thumbnail"></center>
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="card-body" style="height:170px">
+                                <h5 class="card-title newsSubject" newsid="@data.NewsID">@data.Subject</h5>
+                                <p class="card-text news-detail">@data.Detail</p>
+                                <p class="card-text" style="text-align:right;"><small class="text-muted">@data.PublishDate.ToString("dd-MM-yy")</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+    }
+    <div style="padding-left:20px;">
+        <div class="paginator" items="@Model.paging.items" itemsOnPage="@Model.paging.itemsOnPage" pageNumber="@Model.paging.pageNumber"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+       
+    })
+
+    
+</script>

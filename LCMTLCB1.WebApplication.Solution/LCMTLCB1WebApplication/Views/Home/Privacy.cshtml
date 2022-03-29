@@ -1,0 +1,372 @@
+﻿@{
+    ViewData["Title"] = Resource.Home;
+}
+@using LCMTLCB1WebApplication.Resources
+@model UserViewModel
+@*@Html.Raw(Resource.TestDetail)*@
+
+@*<div class="row">
+    <div class="col-sm-12 col-md-6">AAA</div>
+    <div class="col-sm-12 col-md-6">BBB</div>
+    </div>*@
+
+<style>
+    .bodycontent .imghead {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .bodycontent div.row > div {
+        margin-top: 20px;
+    }
+
+    @@media (min-width: 992px) {
+        .divV {
+            padding-right: 0;
+        }
+
+        .divM {
+            padding-left: 0;
+        }
+
+        .midMenu {
+            border-left: 1px solid rgb(33, 37, 41);
+            border-right: 1px solid rgb(33, 37, 41);
+        }
+
+        .patHeader, .safetyHeader {
+            font-size: 20px !important;
+        }
+
+        .safetyDetail {
+            font-size: 10px;
+        }
+    }
+
+    @@media (max-width: 575px) {
+        /* .safetyDetail{
+                                            font-size: 11px;
+                                        }*/
+    }
+
+    @@media (min-width: 1200px) {
+        .safetyDetail {
+            font-size: 12px;
+        }
+    }
+
+    @@media (max-width: 991px) {
+        .safetyDetail {
+            font-size: 18px;
+        }
+
+        .tblqMenu tr td {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    }
+
+    @@media (max-width: 767px) {
+    }
+
+    @@media (min-width: 768px) {
+    }
+
+    .divPat, .SafetyTrucker {
+        cursor: pointer;
+    }
+
+    .divVM, .divPat, .SafetyTrucker {
+        position: relative;
+        text-align: center;
+    }
+
+        .divVM img {
+            width: 100%;
+            /* background-repeat: no-repeat;
+                                        background-size: cover;*/
+        }
+
+        .divVM div.content {
+            width: 100%;
+            /*     border: 3px solid red; */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+
+        .divPat .content1 {
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            transform: translate(-0%, -0%);
+            margin-left: 20px;
+            padding-top: 10px;
+            color: white !important;
+            /* border: solid 1px red;*/
+        }
+
+        .divPat .content2 {
+            position: absolute;
+            bottom: 0px;
+            right: 15px;
+            transform: translate(-0%, -00%);
+            /*margin-left: 20px;
+
+                                        padding-top: 10px;*/
+            color: white;
+            padding-top: 10px;
+            color: white !important;
+            /*border: solid 1px red;*/
+            max-width: 50%;
+        }
+
+        .divPat .content3 {
+            position: absolute;
+            bottom: -20px;
+            right: 10px;
+            transform: translate(-0%, -0%);
+        }
+
+            .divPat .content3 a {
+                color: black;
+            }
+
+    .qMenu, .qMenu, .qMenu {
+        padding: 0 20px 0 20px;
+    }
+    /*    .qMenu1>div, .qMenu2>div, .qMenu3>div{
+                                        margin-top: 10px;
+                                        margin-bottom: 10px;
+                                    }*/
+
+    .SafetyTrucker img {
+        opacity: 0.3;
+    }
+
+    .patHeader {
+        font-size: 32px;
+    }
+
+    .safetyHeader {
+        font-size: 28px;
+    }
+
+    .SafetyTrucker .content1 {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        transform: translate(-0%, -0%);
+        margin-left: 12px;
+        color: white !important;
+        height: 100%;
+        width: 40%;
+        background-color: #094E96;
+        padding-left: 3px;
+        /*     border: solid 1px red;*/
+    }
+
+    .SafetyTrucker .content2 {
+        position: absolute;
+        top: 0%;
+        left: 40%;
+        transform: translate(-0%, -0%);
+        margin-left: -10px;
+        padding-top: 10px;
+        padding-right: 25px;
+        padding-left: 30px;
+        color: white !important;
+        height: 100%;
+        width: 60%;
+        background-color: #094E96;
+        /* border: solid 1px red;*/
+    }
+
+    .tblqMenu {
+        width: 100%;
+        height: 100%;
+    }
+
+        .tblqMenu tr {
+            height: 20%;
+        }
+
+            .tblqMenu tr td {
+                /*padding-top: 5px;
+                                padding-bottom:5px;*/
+            }
+
+                .tblqMenu tr td button {
+                    width: 100%;
+                    max-height: 38px;
+                    vertical-align: middle;
+                    text-align: left;
+                }
+
+    @@media (min-width: 992px) and (max-width: 1199px) {
+        .tblqMenu tr td button {
+            font-size: 12px;
+        }
+    }
+
+    .homeFooter {
+        background-color: #0950A0;
+        color: #ffffff;
+        padding: 0 10px 10px 10px;
+    }
+
+        .homeFooter a {
+            color: #ffffff;
+        }
+
+            .homeFooter a:hover {
+                color: #eeeeee;
+                font-weight: bold;
+            }
+
+        .homeFooter .divexLink > div {
+            display: table-row;
+        }
+
+            .homeFooter .divexLink > div > div {
+                display: table-cell;
+                height: 100%;
+                vertical-align: middle;
+                padding: 0 5px 0 5px;
+            }
+
+                .homeFooter .divexLink > div > div > img {
+                    max-height: 50px;
+                    max-width: 50px;
+                }
+
+    table#titlebar {
+        width: 100%;
+    }
+
+        table#titlebar tr {
+            height: 40px;
+        }
+
+        table#titlebar td#title1 {
+            width: 25px;
+            background-image: url(../images/TitleBG1.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        table#titlebar td#title2 {
+            background-image: url(../images/TitleBG2.png);
+            background-repeat: repeat-x;
+        }
+
+        table#titlebar td#title3 {
+            width: 117px;
+            background-image: url(../images/TitleBG3.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+</style>
+
+<div>
+
+    <table id="titlebar">
+        <tr>
+            <td id="title1"></td>
+            <td id="title2" class="h2"><strong style="color:#FFFFFF">@Resource.Privacy</strong></td>
+            <td id="title3"></td>
+        </tr>
+    </table>
+    <div class="col-sm-12 col-md-12"><center><hr style="width:100%;margin:5px 0 0 0;border: 3px solid #0950A0;opacity:1"></center></div>
+    <div class="row">
+        @*<div class="col-sm-12 col-md-12"><center><strong><span style="border-bottom:5px solid #120972;" class="h1">@Resource.Welcome</span></strong></></center></div>*@
+
+        <div class="col-md-12 col-lg-12" style="padding:50px">
+            <h3>Privacy Policy</h3>
+
+            <ol>
+                <li><strong>Our Pledge</strong></li>
+            </ol>
+
+            <p>LCB Container Terminal 1 Co., Ltd (&ldquo;<strong>Lcb1</strong>&ldquo;), is committed to safeguarding the privacy of individuals with respect to personal data. We therefore make sure that our policies and practices in relation to the collection, use, retention, disclosure, transfer, security and access of personal data comply with the requirements of the applicable laws.</p>
+
+            <ol start="2">
+                <li><strong>Collection of Personally Identifiable Information</strong></li>
+            </ol>
+
+            <p>When you visit our website(s), we will not collect any personally identifiable information (i.e., information that is about you and identifies you) from you unless otherwise stated herein. Cookies used (if any) in any part of our website will not be deployed for collecting personally identifiable information. For your information, Cookies are small computer files that can be stored in web surfers&rsquo; computers for the purposes of obtaining configuration information and analysing web surfers&rsquo; viewing habits. They can save you from registering again when re-visiting a website and are commonly used to track your preferences in relation to the subject matter of the website. You may refuse to accept Cookies (by modifying the relevant Internet options or browsing preferences of your computer system), but to do so you may not be able to utilise or activate certain available functions in our website.</p>
+
+            <ol start="3">
+                <li><strong>TYPES OF PERSONALLY IDENTIFIABLE INFORMATION COLLECTED</strong></li>
+            </ol>
+
+            <p>At times, you may be asked to provide your personally identifiable information (&ldquo;Personal Data&rdquo;) which, depending upon your country, may include, but is not limited to, your name, telephone number, fax number, email address, etc., in order to enjoy the services we offer. Specific purposes for which your Personal Data may be used are set out in our Personal Information Collection Statement under section 5 below, including without limitation the use of Personal Data for direct marketing.</p>
+
+            <ol start="4">
+                <li><strong>SECURITY</strong></li>
+            </ol>
+
+            <p>All Personal Data you provide to us is secured on our website with restricted access by authorised personnel only. Our online registration process uses the SSL protocol link for data transmission so as to protect your data by encrypting it in a secure format to ensure its privacy is maintained.</p>
+
+            <p>Please note that these Privacy Policy may be amended from time to time without prior notice. You are advised to check them on a regular basis.</p>
+
+            <ol start="5">
+                <li><strong>PERSONAL INFORMATION COLLECTION STATEMENT (&ldquo;PICS&rdquo;)</strong></li>
+            </ol>
+
+            <p>(1) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lcb1 may require you to provide us with your Personal Data when you request a service and/or for us to respond to a sales or service inquiry (&ldquo;<strong>Services</strong>&ldquo;). If your Personal Data is incomplete or incorrect, we may not be able to provide or continue to provide the Services to you.</p>
+
+            <p>(2) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; We shall keep your Personal Data confidential at all times. Our policies and practices with respect to the collection, use, retention, disclosure, transfer, security and access of Personal Data will be in accordance with the laws of the applicable jurisdiction and are as set out in this PICS.</p>
+
+            <p>(3)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In this PICS, the following term shall have the following meaning:</p>
+
+            <p>&ldquo;Our affiliates&rdquo; means &ldquo;Laemchabang Terminal 1 Co., Ltd. (LCB1)&rdquo; and &ldquo;LCMT Company Limited (LCMT)&rdquo;</p>
+
+            <p>(4) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; You agree that all the Personal Data provided by you to us may be used and retained by us for the following purposes and for other purposes as may be agreed between you and us or required by law from time to time:</p>
+
+            <ol>
+                <li>providing the Services, including, but not limited to, for the purposes of providing tracking information to follow the container(s), creating and managing your online account, providing more in-depth details about the movement of the cargo, or other similar purposes;</li>
+                <li>analyzing, verifying and/or checking of your status in relation to the provision of the Services;</li>
+                <li>providing you with regular communications from us with details of the Services and its benefits;</li>
+                <li>the normal management and performance of the Services;</li>
+                <li>investigation of complaints, suspected suspicious transactions and research for service improvement;</li>
+                <li>prevention or detection of crime;</li>
+                <li>disclosure as required by law;</li>
+                <li>aggregated behavioural analysis; and</li>
+                <li>direct marketing.</li>
+            </ol>
+
+            <p>(5) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; We may disclose and transfer Personal Data (whether in Thailand or abroad) to our agents or contractors under a duty of confidentiality to us who provide administrative, data processing, research and marketing, distribution, telecommunications, professional or other similar services to us and to any of our actual or proposed assignees or transferees of our rights with respect to you in connection with a merger, sale or transfer (whether of assets or shares), to use, hold, process or retain such Personal Data for the purposes mentioned in sections 4 and 5 above on our behalf. By submitting your info on our website, you consent to the transfer of your Personal Data &nbsp;to Thailand and other countries for such use and storage.</p>
+
+            <p>(6) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; You have the right to:</p>
+
+            <ol>
+                <li>check whether we hold any of your Personal Data;</li>
+                <li>access your Personal Data held by us;</li>
+                <li>require us to correct any Personal Data which is inaccurate;</li>
+                <li>visit the latest version of our policies and practices (from time to time) in relation to Personal Data and the types of Personal Data held by us; and</li>
+                <li>opt out from receiving direct marketing materials from us at any time.</li>
+            </ol>
+
+            <p>(7)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In accordance with the applicable laws and regulations, we have the right to charge you a reasonable fee for the processing of any Personal Data access request.</p>
+
+            <p>(8)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nothing in this PICS shall limit your rights under the applicable laws and regulations.</p>
+
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+</div>
+
+

@@ -1,0 +1,217 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = Resource.Facility;
+}
+@using LCMTLCB1WebApplication.Resources
+<style>
+    table#titlebar{
+        width: 100%;
+    }
+    table#titlebar tr{
+        height:40px;
+    }
+    table#titlebar td#title1{
+        width:25px;
+        background-image: url(../images/TitleBG1.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+    table#titlebar td#title2{
+        background-image: url(../images/TitleBG2.png);
+        background-repeat: repeat-x;
+    }
+    table#titlebar td#title3{
+        width:117px;
+        background-image: url(../images/TitleBG3.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    /*-------------------------------------------------------*/
+    /*-------------------------------------------------------*/
+    /*--------------------Start Here-------------------------*/
+    /*-------------------------------------------------------*/
+    /*-------------------------------------------------------*/
+
+    .rowMain{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .rowMain table.datatbl thead tr th{
+        text-align: left;
+    }
+
+    .rowMain .end{
+        margin-bottom: 20px;
+    }
+</style>
+
+
+<div>
+    <table id="titlebar">
+        <tr>
+            <td id="title1"></td>
+            <td id="title2" class="h2"><strong style="color:#FFFFFF">@Resource.Facility</strong></td>
+            <td id="title3"></td>
+        </tr>
+    </table>
+    <div class="col-sm-12 col-md-12"><center><hr style="width:100%;margin:5px 0 0 0;border: 3px solid #0950A0;opacity:1"></center></div>
+    @*-------------------------------------------------------*@
+    @*-------------------------------------------------------*@
+    @*--------------------Start Here-------------------------*@
+    @*-------------------------------------------------------*@
+    @*-------------------------------------------------------*@
+    <div class="row rowMain">
+
+        @*------------------------1------------------------------*@
+        <div class="col-md-1 d-none d-md-block d-lg-none d-xl-block"></div>
+        <div class="col-md-10 col-lg-5 col-xl-4">
+            <img src="~/images/terminal_area.jpg" style="width:100%;" />
+        </div>
+        <div class="col-md-1 d-none d-md-block d-lg-none"></div>
+        <div class="col-md-1 d-none d-md-block d-lg-none"></div>
+        <div class="col-md-10 col-lg-7 col-xl-6">
+            <div class="card text-dark bg-light mb-6" style="height:100%">
+                <div class="card-body">
+                    <div class="card-title h3">Berths</div>
+                    <table class="table datatbl">
+                        <thead>
+                            <tr>
+                                <th>A0</th>
+                                <th>B1</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>- 1 berth 190 m (B0)<br />- Depth 14 m (MSL)</td>
+                                <td>- 1 berth 359 m (B1)<br />- Depth 15 m (MSL)</td>
+                            </tr>
+                            <tr>
+                                <td>- 1 berth 400 m (A0)<br />- Depth 14 m (MSL)</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1 d-none d-md-block d-lg-none d-xl-block"></div>
+
+        <div class="end"></div>
+
+        @*------------------------2------------------------------*@
+        <div class="col-md-1 d-none d-md-block d-lg-none d-xl-block"></div>
+        <div class="col-md-10 col-lg-5 col-xl-4">
+            <img src="~/images/yardarea.jpg" style="width:100%;" />
+        </div>
+        <div class="col-md-1 d-none d-md-block d-lg-none"></div>
+        <div class="col-md-1 d-none d-md-block d-lg-none"></div>
+        <div class="col-md-10 col-lg-7 col-xl-6">
+            <div class="card text-dark bg-light mb-6" style="height:100%">
+                <div class="card-body">
+                    <div class="card-title h3">Terminal Area</div>
+                    <table class="table datatbl">
+                        <thead>
+                            <tr>
+                                <th>A0</th>
+                                <th>B1</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>- Terminal area: 16.8 hectares</td>
+                                <td>- Terminal area: 18.5 hectares</td>
+                            </tr>
+                            <tr>
+                                <td>- Gate: 10 lanes with 6 weighbridges</td>
+                                <td>- Gate: 7 lanes with 4 weighbridges</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1 d-none d-md-block d-lg-none d-xl-block"></div>
+
+        <div class="end"></div>
+
+        @*------------------------3------------------------------*@
+        <div class="col-md-1 d-none d-md-block d-lg-none d-xl-block"></div>
+        <div class="col-md-10 col-lg-5 col-xl-4">
+            <img src="~/images/cranes.jpg" style="width:100%;" />
+        </div>
+        <div class="col-md-1 d-none d-md-block d-lg-none"></div>
+        <div class="col-md-1 d-none d-md-block d-lg-none"></div>
+        <div class="col-md-10 col-lg-7 col-xl-6">
+            <div class="card text-dark bg-light mb-6" style="height:100%">
+                <div class="card-body">
+                    <div class="card-title h3">Cranes</div>
+                    <table class="table datatbl">
+                        <thead>
+                            <tr>
+                                <th>A0</th>
+                                <th>B1</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>- 1 Super Post - Panamax (61t)</td>
+                                <td>- 2 Super Post - Panamax (61t)</td>
+                            </tr>
+                            <tr>
+                                <td>- 2 Super Post - Panamax (52t)</td>
+                                <td>- 1 Super Post - Panamax (50t)</td>
+                            </tr>
+                            <tr>
+                                <td>- 2 Post - Panamax (40t)</td>
+                                <td>- 1 Post - Panamax (40t)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1 d-none d-md-block d-lg-none d-xl-block"></div>
+
+        <div class="end"></div>
+
+        @*------------------------4------------------------------*@
+        <div class="col-md-1 d-none d-md-block d-lg-none d-xl-block"></div>
+        <div class="col-md-10 col-lg-5 col-xl-4">
+            <img src="~/images/rtgreefer.jpg" style="width:100%;" />
+        </div>
+        <div class="col-md-1 d-none d-md-block d-lg-none"></div>
+        <div class="col-md-1 d-none d-md-block d-lg-none"></div>
+        <div class="col-md-10 col-lg-7 col-xl-6">
+            <div class="card text-dark bg-light mb-6" style="height:100%">
+                <div class="card-body">
+                    <div class="card-title h3">Transtainers</div>
+                    <table class="table datatbl">
+                        <thead>
+                            <tr>
+                                <th>A0</th>
+                                <th>B1</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>- 15 Kalmar (41t)</td>
+                                <td>- 9 Kalmar (41t)</td>
+                            </tr>
+                            <tr>
+                                <td>- 2 Sumitomo (41t)</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1 d-none d-md-block d-lg-none d-xl-block"></div>
+    </div>
+</div>

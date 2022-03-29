@@ -1,0 +1,166 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = Resource.e_Terminal;
+}
+@using LCMTLCB1WebApplication.Resources
+
+<style>
+    table#titlebar {
+        width: 100%;
+    }
+
+        table#titlebar tr {
+            height: 40px;
+        }
+
+        table#titlebar td#title1 {
+            width: 25px;
+            background-image: url(../images/TitleBG1.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        table#titlebar td#title2 {
+            background-image: url(../images/TitleBG2.png);
+            background-repeat: repeat-x;
+        }
+
+        table#titlebar td#title3 {
+            width: 117px;
+            background-image: url(../images/TitleBG3.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+    /*-------------------------------------------------------*/
+    /*-------------------------------------------------------*/
+    /*--------------------Start Here-------------------------*/
+    /*-------------------------------------------------------*/
+    /*-------------------------------------------------------*/
+
+    .rowMain {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+        .rowMain img {
+            width: 100%
+        }
+
+        .rowMain .detail div {
+            display: table;
+            height: 100%;
+        }
+
+            .rowMain .detail div p {
+                vertical-align: middle;
+                display: table-cell;
+            }
+
+    @@media (min-width: 992px) {
+        .divL {
+            padding-right: 0;
+        }
+
+        .divR {
+            padding-left: 0;
+        }
+    }
+</style>
+
+<div class="container backgroundVision">
+    <table id="titlebar">
+        <tr>
+            <td id="title1"></td>
+            <td id="title2" class="h2"><strong style="color:#FFFFFF">@Resource.e_Terminal</strong></td>
+            <td id="title3"></td>
+        </tr>
+    </table>
+    <div class="col-sm-12 col-md-12"><center><hr style="width:100%;margin:5px 0 0 0;border: 3px solid #0950A0;opacity:1"></center></div>
+    @*-------------------------------------------------------*@
+    @*-------------------------------------------------------*@
+    @*--------------------Start Here-------------------------*@
+    @*-------------------------------------------------------*@
+    @*-------------------------------------------------------*@
+    <div class="row rowMain " style="">
+        <div class="row">
+            <div class="col-md-12 col-lg-12  ">
+                <br/>
+                <div class="topicHead-Center h3">   @Resource.WelcomeToE_Terminal</div><br/>
+        <br/>
+        <br/>
+         
+            </div>
+        </div>
+        
+
+        <div class="row" style="margin-bottom:10px">
+            <div class="col-md-3 col-lg-3">
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <button id="btnBerth" class="btn btn-LCMT btn-default form-control" type="button">
+                    <i class="fa fa-search"> </i> @Resource.Berth_Schedule
+                </button> 
+            </div>
+            <div class="col-md-3 col-lg-3">
+            </div>
+        </div>
+        <div class="row" style="margin-bottom:10px">
+            <div class="col-md-3 col-lg-3">
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <button id="btnBooking" class="btn btn-LCMT btn-default form-control" type="button">
+                    <i class="fa fa-search"></i> @Resource.Booking
+                </button> 
+            </div>
+            <div class="col-md-3 col-lg-3">
+            </div>
+        </div>
+        <div class="row" style="margin-bottom:10px">
+            <div class="col-md-3 col-lg-3">
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <button id="btnContainer" class="btn btn-LCMT btn-default form-control" type="button">
+                    <i class="fa fa-search"></i> @Resource.Container
+                </button> 
+            </div>
+            <div class="col-md-3 col-lg-3">
+            </div>
+        </div>
+        <div class="row" style="margin-bottom:10px">
+            <div class="col-md-3 col-lg-3">
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <form id="frmLogin" method="post" asp-controller="ETerminal" asp-action="Logout">
+                    <button id="btnSearch" class="btn btn-LCMT btn-default form-control" type="submit">
+                        <i class="fa fa-door-open"></i> @Resource.LogOff
+                    </button> 
+                </form>
+            </div>
+            <div class="col-md-3 col-lg-3">
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $("#btnBerth").click(function () {
+            redirect("/ETerminal/BerthSchedule");
+        })
+        $("#btnBooking").click(function () {
+            redirect("/ETerminal/Booking");
+        })
+        $("#btnContainer").click(function () {
+            redirect("/ETerminal/Container");
+        })
+    });
+</script>
+

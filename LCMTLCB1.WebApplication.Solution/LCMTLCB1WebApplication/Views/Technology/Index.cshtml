@@ -1,0 +1,139 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = Resource.Technology;
+}
+@using LCMTLCB1WebApplication.Resources
+<style>
+    table#titlebar{
+        width: 100%;
+    }
+    table#titlebar tr{
+        height:40px;
+    }
+    table#titlebar td#title1{
+        width:25px;
+        background-image: url(../images/TitleBG1.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+    table#titlebar td#title2{
+        background-image: url(../images/TitleBG2.png);
+        background-repeat: repeat-x;
+    }
+    table#titlebar td#title3{
+        width:117px;
+        background-image: url(../images/TitleBG3.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    /*-------------------------------------------------------*/
+    /*-------------------------------------------------------*/
+    /*--------------------Start Here-------------------------*/
+    /*-------------------------------------------------------*/
+    /*-------------------------------------------------------*/
+    .rowMain{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .rowMain div.titlename{
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .rowMain>span{
+        border-bottom: 3px solid #0950A0
+    }
+    
+    .rowMain div.subjet{
+        color: #0000FF;
+    }
+    .rowMain div.detail{
+        margin-bottom: 10px;
+    }
+</style>
+
+<div>
+    <table id="titlebar">
+        <tr>
+            <td id="title1"></td>
+            <td id="title2" class="h2"><strong style="color:#FFFFFF">@Resource.Technology</strong></td>
+            <td id="title3"></td>
+        </tr>
+    </table>
+    <div class="col-sm-12 col-md-12"><center><hr style="width:100%;margin:5px 0 0 0;border: 3px solid #0950A0;opacity:1"></center></div>
+    @*-------------------------------------------------------*@
+    @*-------------------------------------------------------*@
+    @*--------------------Start Here-------------------------*@
+    @*-------------------------------------------------------*@
+    @*-------------------------------------------------------*@
+
+    <div class="row rowMain" style="padding:0 20px 0 20px;">
+        
+
+        <div class="h3 titlename"><span>COSMOS</span></div>
+
+        <div class="col-3 col-sm-3 subjet">
+            CTCS<br />
+            Container Terminal Control System
+        </div>
+        <div class="col-9 col-sm-9 detail">
+            The foundation of the terminal operating system keeps track of all service performed on each container which is handled on the terminal.<br />
+            CTCS manage bookings, releases, work orders and standing orders, gate operations, container tracking, handling of exceptions, management reporting and communication.
+        </div>
+
+        <div class="col-3 col-sm-3 subjet">SPACE</div>
+        <div class="col-9 col-sm-9 detail">Users define the rules and operational parameters of the container terminal. When containers arrive on the yard, taking into account the previous defined rules, such as minimise travel distance, grouping by weight, destination and mode of transportation. Manual intervention is minimal. All container move instructions are dispatched by the system to handling equipment operators on the yard.</div>
+
+        <div class="col-3 col-sm-3 subjet">SHIPS</div>
+        <div class="col-9 col-sm-9 detail">The vessel planing software defines the best operational sequence for the cranes with a minimum of shifting moves on the yard, optimizes the discharge and loading of the vessel, taking into account pre-stow information, vessel stability as well as the yard location, destination and weight of the container to be loaded.</div>
+
+        <div class="col-3 col-sm-3 subjet">COREBIS</div>
+        <div class="col-9 col-sm-9 detail">In accordance with contracts and tariffs agreed betweem the terminal and our customer, COREBIS automatically creates invoices based on the container handling data coming from CTCS.</div>
+
+        <div class="col-3 col-sm-3 subjet">SIGNAL</div>
+        <div class="col-9 col-sm-9 detail">With this EDI Monitor we are able to exchange EDI message with our customers automatically such as CODECO, COARRI, COPRAR,BAPLIE, COPARN and INVOIC.</div>
+
+
+
+        <div class="h3 titlename"><span>EDI</span></div>
+
+        <div class="col-3 col-sm-3 subjet">
+            EDI<br />
+            Electronic Data Interchange
+        </div>
+        <div class="col-9 col-sm-9 detail">
+            LCB1 Group is ready to exchange all related EDI messages to a customer by automatic sending and receiving via FTP or SMTP (Mail) protocol as follows.
+            <br /><br />
+            1. CODECO : Gate move report
+            <br /><br />
+            2. COARRI   : Load and Discharge report
+            <br /><br />
+            3. COPRAR : Load and Discharge order
+            <br /><br />
+            4. COPARN : Booking Announcement
+            <br /><br />
+            5. BAPLIE    : Bay Plan
+            <br /><br />
+            6. INVOIC    : Invoice report
+        </div>
+
+
+
+        <div class="h3 titlename"><span>RDT</span></div>
+
+        <div class="col-3 col-sm-3 subjet">
+            RDT<br />
+            Radio Data Terminal
+        </div>
+        <div class="col-9 col-sm-9 detail">
+            <strong>LCB1</strong> Group is now equipped with the state-of-the-art Radio Data Terminal system (RDT). Onboard/alongside operations assistants, along with all driving cabs, have all been fitted with radio data terminals. Operators now have access to timely, accurate information regarding container movement, with the control center continuously maintaining updated firsthand information on the status of any container in the yard, as well as the progress of vessel operations. The RDT system greatly enhances real-time date transmission betweeen the control center and on-site operators.
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,178 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = Resource.e_Quick_Search;
+}
+@using LCMTLCB1WebApplication.Resources
+
+<style>
+    table#titlebar {
+        width: 100%;
+    }
+
+        table#titlebar tr {
+            height: 40px;
+        }
+
+        table#titlebar td#title1 {
+            width: 25px;
+            background-image: url(../images/TitleBG1.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        table#titlebar td#title2 {
+            background-image: url(../images/TitleBG2.png);
+            background-repeat: repeat-x;
+        }
+
+        table#titlebar td#title3 {
+            width: 117px;
+            background-image: url(../images/TitleBG3.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+    /*-------------------------------------------------------*/
+    /*-------------------------------------------------------*/
+    /*--------------------Start Here-------------------------*/
+    /*-------------------------------------------------------*/
+    /*-------------------------------------------------------*/
+
+    .rowMain {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+        .rowMain img {
+            width: 100%
+        }
+
+        .rowMain .detail div {
+            display: table;
+            height: 100%;
+        }
+
+            .rowMain .detail div p {
+                vertical-align: middle;
+                display: table-cell;
+            }
+
+    @@media (min-width: 992px) {
+        .divL {
+            padding-right: 0;
+        }
+
+        .divR {
+            padding-left: 0;
+        }
+    }
+</style>
+
+<div class="container backgroundVision">
+    <table id="titlebar">
+        <tr>
+            <td id="title1"></td>
+            <td id="title2" class="h2"><strong style="color:#FFFFFF">@Resource.e_Quick_Search</strong></td>
+            <td id="title3"></td>
+        </tr>
+    </table>
+    <div class="col-sm-12 col-md-12"><center><hr style="width:100%;margin:5px 0 0 0;border: 3px solid #0950A0;opacity:1"></center></div>
+    @*-------------------------------------------------------*@
+    @*-------------------------------------------------------*@
+    @*--------------------Start Here-------------------------*@
+    @*-------------------------------------------------------*@
+    @*-------------------------------------------------------*@
+    <div class="row rowMain ">
+        <div class="row">
+            <div class="col-md-12 col-lg-12  ">
+                <br />
+                <div class="topicHead-Center"><strong>@Resource.Container</strong> </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-3 col-lg-3">
+            </div>
+            <div class="col-md-3 col-lg-3">
+            </div>
+            <div class="col-md-6 col-lg-6">
+
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label txtRight">Container Number : </label>
+                    <div class="col-sm-8">
+                        <div class="input-group">
+                            <input type="text" id="txtContainerNumber" class="form-control form-control-sm" value="@ViewBag.containerNumber" placeholder="" maxlength="11" />
+                            <div class="input-group-append">
+                                <button id="btnSearch" class="btn btn-primary" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+
+                        </div>
+                        <span style="color:red;font-size:11px" id="txtContainerSearchValid"></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="detailContent">
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        loadList($("#txtContainerNumber").val());
+        $("#btnSearch").click(function(){
+            if($("#txtContainerNumber").val()==''){
+                $("#txtContainerNumber").focus();
+                return;
+            }
+
+
+                if ($("#txtContainerNumber").val().length < 11){
+                    $("#txtContainerSearchValid").text("* text too short (11 digit).");
+                 return;
+                }
+               loadList($("#txtContainerNumber").val());
+
+        });
+         $("#txtContainerNumber").on("keydown keyup change focus", function(){
+                    var value = $(this).val();
+                    if (value=='') {
+                       $("#txtContainerSearchValid").text("");
+
+                    }else if (value.length < 11){
+                          $("#txtContainerSearchValid").text("* text too short (11 digit).");
+
+                    }else{
+                        $("#txtContainerSearchValid").text("");
+                    }
+            });
+            var input = document.getElementById("txtContainerNumber");
+                input.addEventListener("keyup", function(event) {
+                  if (event.keyCode === 13) {
+                   event.preventDefault();
+                   document.getElementById("btnSearch").click();
+                  }
+                });
+    });
+
+    function loadList(bookingNumber){
+        $.post('@Url.Action("Detail","Container")',"ContainerNumber="+bookingNumber, function(result){
+
+            var select = "#detailContent";
+            $(select).html(result);
+
+        })
+    }
+
+
+</script>
+

@@ -1,0 +1,146 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = Resource.e_Terminal + " - " + Resource.Berth_Schedule;
+}
+@using LCMTLCB1WebApplication.Resources
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<style>
+    table#titlebar {
+        width: 100%;
+    }
+
+        table#titlebar tr {
+            height: 40px;
+        }
+
+        table#titlebar td#title1 {
+            width: 25px;
+            background-image: url(../images/TitleBG1.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        table#titlebar td#title2 {
+            background-image: url(../images/TitleBG2.png);
+            background-repeat: repeat-x;
+        }
+
+        table#titlebar td#title3 {
+            width: 117px;
+            background-image: url(../images/TitleBG3.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+    /*-------------------------------------------------------*/
+    /*-------------------------------------------------------*/
+    /*--------------------Start Here-------------------------*/
+    /*-------------------------------------------------------*/
+    /*-------------------------------------------------------*/
+
+    .rowMain {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+        .rowMain img {
+            width: 100%
+        }
+
+        .rowMain .detail div {
+            display: table;
+            height: 100%;
+        }
+
+            .rowMain .detail div p {
+                vertical-align: middle;
+                display: table-cell;
+            }
+
+    @@media (min-width: 992px) {
+        .divL {
+            padding-right: 0;
+        }
+
+        .divR {
+            padding-left: 0;
+        }
+    }
+</style>
+
+<div class="container">
+    <table id="titlebar">
+        <tr>
+            <td id="title1"></td>
+            <td id="title2" class="h2"><strong style="color:#FFFFFF">@Resource.Berth_Schedule</strong></td>
+            <td id="title3"></td>
+        </tr>
+    </table>
+    <div class="col-sm-12 col-md-12"><center><hr style="width:100%;margin:5px 0 0 0;border: 3px solid #0950A0;opacity:1"></center></div>
+    @*-------------------------------------------------------*@
+    @*-------------------------------------------------------*@
+    @*--------------------Start Here-------------------------*@
+    @*-------------------------------------------------------*@
+    @*-------------------------------------------------------*@
+    <div class="row rowMain ">
+
+        <br />
+        <br />
+       
+        
+        <div id="detailContent">
+        </div>
+        <button id="btnBack" class="btn btn-primary " style="width:90px;margin-left:10px;">
+            <i class="fa fa-backward"></i> Back
+        </button>
+    </div>
+</div>
+<script type="text/javascript">
+     
+        $(document).ready(function(){
+            localStorage.setItem("PageSize", @ViewBag.InitPageSize);
+             
+              
+            loadList(@ViewBag.InitPageSize,1);
+
+            $('#btnBack').click(function () {
+                redirect("/Eterminal");
+            })
+ 
+        });
+
+        function loadList(pageSize,pageNumber){
+            $.post('@Url.Action("BerthScheduleDetail","ETerminal")',"pageSize="+pageSize+"&page="+pageNumber, function(result){
+                var select = "#detailContent";
+
+                $(select).html(result);
+               makePaginator(select,pageSize,pageNumber);
+
+            });
+        }
+
+        function makePaginator(select,pageSize,pageNumber) {
+            var sPageSize = localStorage.getItem("PageSize");
+           
+            $("#ddlPageSize").val(sPageSize);
+            $("div.paginator", select).pagination({
+                items: $("div.paginator", select).attr("items"),
+                itemsOnPage: $("div.paginator", select).attr("itemsOnPage"),
+                currentPage: $("div.paginator", select).attr("pageNumber"),
+                cssStyle: 'light-theme',
+                onPageClick: function (pageNumber) {
+                    loadList(pageSize,pageNumber);
+                }
+            });
+            $("#ddlPageSize").change(function() {
+                localStorage.setItem("PageSize", $(this).val());                
+               loadList( $("#ddlPageSize").val(),1);
+            });
+        }
+
+</script>
+

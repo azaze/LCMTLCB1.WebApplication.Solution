@@ -1,0 +1,176 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = LCMTLCB1WebApplication
+build_property.RootNamespace = LCMTLCB1WebApplication
+build_property.ProjectDir = D:\MyProjects\lcmtlcb1webapplication\LCMTLCB1.WebApplication.Solution\LCMTLCB1WebApplication\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\MyProjects\lcmtlcb1webapplication\LCMTLCB1.WebApplication.Solution\LCMTLCB1WebApplication
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/Award/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXdhcmRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/BerthSchedule/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmVydGhTY2hlZHVsZVxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/BerthSchedule/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmVydGhTY2hlZHVsZVxpbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/Booking/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/Booking/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xpbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/Contact/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/Container/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFpbmVyXERldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/Container/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFpbmVyXGluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/ETerminal/BerthSchedule/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRVRlcm1pbmFsXEJlcnRoU2NoZWR1bGVcRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/ETerminal/BerthSchedule/DetailNw.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRVRlcm1pbmFsXEJlcnRoU2NoZWR1bGVcRGV0YWlsTncuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/ETerminal/BerthSchedule/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRVRlcm1pbmFsXEJlcnRoU2NoZWR1bGVcaW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/ETerminal/Booking/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRVRlcm1pbmFsXEJvb2tpbmdcRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/ETerminal/Booking/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRVRlcm1pbmFsXEJvb2tpbmdcaW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/ETerminal/Container/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRVRlcm1pbmFsXENvbnRhaW5lclxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/ETerminal/Container/DetailData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRVRlcm1pbmFsXENvbnRhaW5lclxEZXRhaWxEYXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/ETerminal/Container/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRVRlcm1pbmFsXENvbnRhaW5lclxpbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/ETerminal/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRVRlcm1pbmFsXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/Facility/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjaWxpdHlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/Home/Cookie.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb29raWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/Home/Terms.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUZXJtcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/Home/_LegelModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfTGVnZWxNb2RhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/Home/_PatModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfUGF0TW9kYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/Home/_PrivacyNotice.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfUHJpdmFjeU5vdGljZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/Home/_TermsAndConditions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfVGVybXNBbmRDb25kaXRpb25zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/ManagementTeam/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFuYWdlbWVudFRlYW1cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/News/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmV3c1xEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/News/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmV3c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/News/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmV3c1xMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/Operation/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3BlcmF0aW9uXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/Profile/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/Statistics/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdGlzdGljc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/Technology/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaG5vbG9neVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-dh4hge6cy0
+
+[D:/MyProjects/lcmtlcb1webapplication/LCMTLCB1.WebApplication.Solution/LCMTLCB1WebApplication/Views/Shared/_LCMTLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MQ01UTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-8ubbuqu96b
